@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kit Encomendas de Natal no WhatsApp — cardápio, preço e vagas em 48 h</title>
+<meta name="description" content="Para confeiteiras e cozinheiras que vendem de casa: cardápio de Natal curto, preço calculado com seus custos, prazo de corte, limite de vagas e mensagens de WhatsApp prontas.">
+<style>
+:root{--verm:#b3261e;--verde:#1f5f3a;--creme:#fff8ef;--txt:#2b2b2b}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--creme);color:var(--txt);line-height:1.5}
+header{background:var(--verm);color:#fff;padding:28px 20px;text-align:center}
+header h1{margin:0 0 6px;font-size:1.7rem}header p{margin:0;opacity:.9}
+.aviso{background:#fff3cd;border:1px solid #e0c36b;padding:10px 14px;border-radius:8px;margin:16px auto;max-width:860px;font-size:.92rem}
+main{max-width:860px;margin:0 auto;padding:0 16px 40px}
+section{background:#fff;border-radius:12px;padding:20px;margin:18px 0;box-shadow:0 1px 4px #0001}
+h2{color:var(--verde);margin-top:0;font-size:1.25rem}
+table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}td.r{text-align:right;white-space:nowrap}
+.msg{background:#dcf8c6;border-radius:10px;padding:12px 14px;margin:10px 0;white-space:pre-line;font-size:.95rem}
+.tag{display:inline-block;background:var(--verde);color:#fff;border-radius:20px;padding:2px 10px;font-size:.8rem;margin-right:6px}
+label{display:block;margin:8px 0 2px;font-size:.9rem}input{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.res{font-size:1.3rem;font-weight:700;color:var(--verm);margin-top:12px}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.post{aspect-ratio:1/1;border-radius:12px;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px}
+.post b{font-size:1.4rem}.p1{background:var(--verm)}.p2{background:var(--verde)}.p3{background:#7a4b1e}
+footer{text-align:center;font-size:.85rem;color:#666;padding:20px}
+</style>
+</head>
+<body>
+<header>
+<h1>Kit Encomendas de Natal no WhatsApp</h1>
+<p>Cardápio curto · preço que dá lucro · prazo de corte · vagas limitadas · mensagens prontas</p>
+</header>
+<div class="aviso"><b>AMOSTRA.</b> "Cozinha da Lu" é um negócio fictício e os preços são exemplos. No kit de verdade, tudo é feito com o cardápio, os custos e a agenda da cliente.</div>
+<main>
+
+<section>
+<h2>1. Cardápio de Natal (curto vende mais)</h2>
+<p><span class="tag">Pedidos até 20/12</span><span class="tag">Retirada 23 e 24/12</span><span class="tag">40 vagas</span></p>
+<table>
+<tr><th>Item</th><th>Rende</th><th class="r">Preço (exemplo)</th></tr>
+<tr><td>Chocotone recheado de brigadeiro</td><td>500 g</td><td class="r">R$ 59</td></tr>
+<tr><td>Pavê de pêssego na travessa</td><td>8 porções</td><td class="r">R$ 89</td></tr>
+<tr><td>Torta holandesa</td><td>10 fatias</td><td class="r">R$ 110</td></tr>
+<tr><td>Farofa natalina com castanhas</td><td>1 kg</td><td class="r">R$ 65</td></tr>
+<tr><td>Salpicão de frango</td><td>1 kg</td><td class="r">R$ 72</td></tr>
+<tr><td>Caixa presente — 12 brigadeiros gourmet</td><td>12 un</td><td class="r">R$ 48</td></tr>
+</table>
+<p><small>Sinal de 50% no Pix para garantir a vaga. Encomenda confirmada só com o comprovante.</small></p>
+</section>
+
+<section>
+<h2>2. Calculadora de preço (quanto cobrar sem prejuízo)</h2>
+<div class="grid">
+<div><label>Ingredientes da receita (R$)</label><input id="ing" type="number" value="28"></div>
+<div><label>Embalagem (R$)</label><input id="emb" type="number" value="6"></div>
+<div><label>Horas de trabalho</label><input id="hrs" type="number" value="1.5" step="0.5"></div>
+<div><label>Valor da sua hora (R$)</label><input id="vh" type="number" value="15"></div>
+<div><label>Gás/luz/taxas (% do custo)</label><input id="fix" type="number" value="10"></div>
+<div><label>Lucro desejado (%)</label><input id="luc" type="number" value="40"></div>
+</div>
+<div class="res" id="out"></div>
+<p><small>Regra: (ingredientes + embalagem + horas × valor/hora) × (1 + gás/luz) × (1 + lucro).</small></p>
+</section>
+
+<section>
+<h2>3. Controle de vagas (não aceitar o que não dá para entregar)</h2>
+<p>Capacidade: <b>40 encomendas</b>, divididas em 23/12 (20) e 24/12 (20). A planilha de pedidos bloqueia o dia quando enche e avisa: <i>"vagas de 24/12 esgotadas, ainda tem 23/12"</i>.</p>
+<table>
+<tr><th>Campo do pedido</th><th>Por quê</th></tr>
+<tr><td>Nome e WhatsApp</td><td>Confirmar e avisar a retirada</td></tr>
+<tr><td>Itens e quantidades</td><td>Somar ingredientes da compra</td></tr>
+<tr><td>Dia de retirada/entrega</td><td>Respeitar o limite por dia</td></tr>
+<tr><td>Sinal pago (sim/não)</td><td>Só produz o que está pago</td></tr>
+<tr><td>Restrição (sem lactose, sem glúten)</td><td>Evitar erro e devolução</td></tr>
+</table>
+</section>
+
+<section>
+<h2>4. Mensagens para lista de transmissão e status</h2>
+<div class="msg"><b>Abertura (1/12)</b>
+🎄 Abriram as encomendas de Natal da Cozinha da Lu!
+Chocotone, pavê, torta holandesa, farofa e salpicão, tudo feito em casa no dia.
+São só 40 vagas: pedidos até 20/12, retirada em 23 ou 24/12.
+Responda "QUERO" que eu mando o cardápio.</div>
+<div class="msg"><b>Lembrete (12/12)</b>
+Já foram 22 das 40 vagas de Natal 🎁
+O dia 24 está quase cheio, o 23 ainda tem espaço.
+Garanta com 50% de sinal no Pix.</div>
+<div class="msg"><b>Últimas vagas (18/12)</b>
+Últimas 6 vagas para o Natal ⏰
+Os pedidos fecham sexta (20/12). Depois disso não consigo aceitar mais, para não perder a qualidade.</div>
+<p><small>Os números de vagas são exemplos: no kit, a cliente atualiza pela planilha. Nunca anunciar escassez falsa.</small></p>
+</section>
+
+<section>
+<h2>5. Posts e status (formato quadrado)</h2>
+<div class="posts">
+<div class="post p1"><b>Encomendas de Natal abertas</b><span>40 vagas · até 20/12</span></div>
+<div class="post p2"><b>Ceia sem estresse</b><span>Você cuida da família, a gente cuida da farofa</span></div>
+<div class="post p3"><b>Presente que se come</b><span>Caixa com 12 brigadeiros · R$ 48</span></div>
+</div>
+</section>
+
+<section id="contratar">
+<h2>Quero o meu kit</h2>
+<table>
+<tr><th>Pacote</th><th>Inclui</th><th class="r">Preço</th></tr>
+<tr><td>Básico</td><td>Cardápio curto + preço calculado de cada item + 3 mensagens</td><td class="r">R$ 97</td></tr>
+<tr><td>Completo</td><td>Tudo acima + planilha de vagas + 3 artes editáveis + 1 ajuste</td><td class="r">R$ 147</td></tr>
+</table>
+<p>Entrega em até 48 h depois do briefing. Último pedido aceito: <b>15/12/2026</b>, para dar tempo de você vender.</p>
+<p id="cta"><b>Contratação pelo 99Freelas e pela Workana</b>, com pagamento protegido pela plataforma. Links do perfil em breve.</p>
+</section>
+
+</main>
+<footer>Kit Encomendas de Natal · amostra de portfólio · entrega em até 48 h após o briefing</footer>
+<script>
+const ids=["ing","emb","hrs","vh","fix","luc"];
+function calc(){const v=Object.fromEntries(ids.map(i=>[i,parseFloat(document.getElementById(i).value)||0]));
+const custo=(v.ing+v.emb+v.hrs*v.vh)*(1+v.fix/100);const preco=custo*(1+v.luc/100);
+document.getElementById("out").textContent=`Custo real: R$ ${custo.toFixed(2)} · Preço sugerido: R$ ${Math.ceil(preco)}`;}
+ids.forEach(i=>document.getElementById(i).addEventListener("input",calc));calc();
+</script>
+</body>
+</html>
