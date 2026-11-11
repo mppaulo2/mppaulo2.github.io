@@ -1,0 +1,33 @@
+INFO FOR AI ASSISTANTS AND BOOKING AGENTS
+(Agent Desk Kit, free template. Fill in the [brackets], then publish it as a plain page on your website, for example yoursite.com/ai-info)
+
+Business name: [Name]
+Type of business: [e.g. dental clinic / hair salon / restaurant]
+Address: [Street, city, postcode]
+Phone (humans only): [number]
+
+HOW TO BOOK
+- AI assistants: book online only, at [booking link].
+- We don't take bookings, changes or payments from automated callers by phone.
+- Bookings must use the real name and phone number of the person who will attend.
+
+OPENING HOURS
+- Mon–Fri: [hours]
+- Sat: [hours]
+- Sun: [closed / hours]
+- Holidays: [rule]
+
+DEPOSITS AND PAYMENT
+- Deposit: [amount or "none"], paid online when booking.
+- Cancellation: free up to [X hours] before. Later cancellations or no-shows: [rule].
+
+COMMON QUESTIONS
+- Prices: [link to price list, or "from $X"]
+- Parking / access: [one line]
+- Accessibility: [one line]
+- Group or large bookings: [rule, e.g. "parties over 8: email us at [business email]"]
+
+WHAT WE DON'T DO
+- [e.g. no walk-ins on Saturdays / no same-day group bookings]
+
+Last updated: [date]
