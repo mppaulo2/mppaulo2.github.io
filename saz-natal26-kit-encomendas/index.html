@@ -3,123 +3,224 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kit Encomendas de Natal no WhatsApp — cardápio, preço e vagas em 48 h</title>
-<meta name="description" content="Para confeiteiras e cozinheiras que vendem de casa: cardápio de Natal curto, preço calculado com seus custos, prazo de corte, limite de vagas e mensagens de WhatsApp prontas.">
+<title>Encomendas de Natal sem prejuízo e sem virar a noite · Kit em 48 h</title>
+<meta name="description" content="Para confeiteiras e cozinheiras que vendem de casa: cardápio de Natal curto, preço de cada item calculado com os seus custos, prazo de corte e limite de vagas por dia. Pronto em 48 h, a partir de R$ 97.">
+<meta property="og:title" content="Encomendas de Natal sem prejuízo e sem virar a noite">
+<meta property="og:description" content="Cardápio curto, preço com lucro e limite de vagas por dia. Montado com os seus números, em até 48 h.">
 <style>
-:root{--verm:#b3261e;--verde:#1f5f3a;--creme:#fff8ef;--txt:#2b2b2b}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--creme);color:var(--txt);line-height:1.5}
-header{background:var(--verm);color:#fff;padding:28px 20px;text-align:center}
-header h1{margin:0 0 6px;font-size:1.7rem}header p{margin:0;opacity:.9}
-.aviso{background:#fff3cd;border:1px solid #e0c36b;padding:10px 14px;border-radius:8px;margin:16px auto;max-width:860px;font-size:.92rem}
-main{max-width:860px;margin:0 auto;padding:0 16px 40px}
-section{background:#fff;border-radius:12px;padding:20px;margin:18px 0;box-shadow:0 1px 4px #0001}
-h2{color:var(--verde);margin-top:0;font-size:1.25rem}
-table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}td.r{text-align:right;white-space:nowrap}
+:root{--verm:#B3261E;--verm2:#8E1D17;--verde:#1F5F3A;--creme:#FFF8EF;--ouro:#F2C14E;--txt:#222}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--creme);color:var(--txt);line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+.hero{background:var(--verm);color:#fff;padding:34px 0 40px}
+.kick{display:inline-block;background:rgba(255,255,255,.16);border-radius:99px;padding:4px 12px;font-size:13px;font-weight:700;letter-spacing:.04em}
+h1{font-size:clamp(30px,5.4vw,48px);line-height:1.08;margin:14px 0 12px}
+.lead{font-size:clamp(17px,2.3vw,20px);margin:0 0 18px;max-width:36em;opacity:.97}
+.btn{display:inline-block;background:var(--ouro);color:#2a1a00;font-weight:800;text-decoration:none;padding:15px 26px;border-radius:999px;font-size:18px;box-shadow:0 5px 0 #b68a1f}
+.btn.alt{background:var(--verde);color:#fff;box-shadow:0 5px 0 #123b23}
+.under{font-size:14px;margin:12px 0 0;opacity:.92}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{background:#fff;color:var(--verm2);border-radius:99px;padding:5px 12px;font-weight:700;font-size:14px}
+h2{color:var(--verde);font-size:clamp(23px,3.3vw,30px);line-height:1.15;margin:40px 0 12px}
+.pain{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.pain div{background:#fff;border-radius:12px;padding:16px;border-left:5px solid var(--verm)}
+.pain b{display:block;margin-bottom:4px}
+.get{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.get div{background:#fff;border-radius:12px;padding:16px;border-top:5px solid var(--ouro)}
+.get .ic{font-size:26px}
+.get b{display:block;margin:4px 0}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.steps div{background:#fff;border-radius:12px;padding:16px;position:relative;padding-top:46px}
+.steps div:before{counter-increment:s;content:counter(s);position:absolute;top:12px;left:16px;background:var(--verm);color:#fff;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.plan{background:#fff;border-radius:14px;padding:22px;border:2px solid #eadccc}
+.plan.top{border-color:var(--verde);position:relative}
+.plan.top:before{content:"Mais completo";position:absolute;top:-12px;left:18px;background:var(--verde);color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:99px}
+.plan h3{margin:0}
+.plan .p{font-size:40px;font-weight:900;color:var(--verm);margin:6px 0}
+.plan ul{padding-left:20px;margin:10px 0 16px}
+.plan li{margin:4px 0}
+.plan li.no{color:#aaa;text-decoration:line-through}
+.note{font-size:14px;color:#555}
+/* amostra */
+.aviso{background:#fff3cd;border:1px solid #e0c36b;padding:10px 14px;border-radius:8px;font-size:.92rem}
+section.s{background:#fff;border-radius:12px;padding:20px;margin:14px 0;box-shadow:0 1px 4px #0001}
+section.s h3{color:var(--verde);margin-top:0}
+table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}td.r,th.r{text-align:right;white-space:nowrap}
+.tag{display:inline-block;background:var(--verde);color:#fff;border-radius:20px;padding:2px 10px;font-size:.8rem;margin:0 6px 6px 0}
+label{display:block;margin:8px 0 2px;font-size:.9rem}input{width:100%;padding:9px;border:1px solid #ccc;border-radius:6px;font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.res{font-size:1.3rem;font-weight:800;color:var(--verm);margin-top:12px}
 .msg{background:#dcf8c6;border-radius:10px;padding:12px 14px;margin:10px 0;white-space:pre-line;font-size:.95rem}
-.tag{display:inline-block;background:var(--verde);color:#fff;border-radius:20px;padding:2px 10px;font-size:.8rem;margin-right:6px}
-label{display:block;margin:8px 0 2px;font-size:.9rem}input{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:1rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
-.res{font-size:1.3rem;font-weight:700;color:var(--verm);margin-top:12px}
-.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.post{aspect-ratio:1/1;border-radius:12px;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px}
-.post b{font-size:1.4rem}.p1{background:var(--verm)}.p2{background:var(--verde)}.p3{background:#7a4b1e}
-footer{text-align:center;font-size:.85rem;color:#666;padding:20px}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.post{aspect-ratio:1/1;border-radius:12px;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:16px;gap:6px}
+.post b{font-size:1.3rem;line-height:1.15}.p1{background:var(--verm)}.p2{background:var(--verde)}.p3{background:#7A4B1E}
+.faq details{background:#fff;border-radius:10px;padding:12px 16px;margin:8px 0}
+.faq summary{font-weight:700;cursor:pointer}.faq p{margin:8px 0 0}
+.final{background:var(--verde);color:#fff;border-radius:16px;padding:26px;text-align:center;margin:40px 0 0}
+.final h2{color:#fff;margin-top:0}
+footer{text-align:center;font-size:.85rem;color:#666;padding:24px 18px 40px}
+@media (max-width:680px){.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header>
-<h1>Kit Encomendas de Natal no WhatsApp</h1>
-<p>Cardápio curto · preço que dá lucro · prazo de corte · vagas limitadas · mensagens prontas</p>
+
+<header class="hero">
+ <div class="wrap">
+  <span class="kick">PARA QUEM VENDE COMIDA DE CASA · NATAL 2026</span>
+  <h1>Encomendas de Natal sem prejuízo e sem virar a noite do dia 23.</h1>
+  <p class="lead">Eu monto com os seus números: cardápio curto, preço de cada item que cobre ingrediente, embalagem, gás e a sua hora, e um limite de vagas por dia para você não aceitar mais do que consegue entregar.</p>
+  <a class="btn" href="#pacotes">Ver pacotes: a partir de R$ 97</a>
+  <p class="under">Com o seu cardápio e os seus custos · pronto em até 48 h depois do briefing</p>
+  <ul class="chips"><li>Cardápio curto</li><li>Preço com lucro</li><li>Prazo de corte</li><li>Vagas por dia</li><li>Mensagens prontas</li></ul>
+ </div>
 </header>
-<div class="aviso"><b>AMOSTRA.</b> "Cozinha da Lu" é um negócio fictício e os preços são exemplos. No kit de verdade, tudo é feito com o cardápio, os custos e a agenda da cliente.</div>
-<main>
 
-<section>
-<h2>1. Cardápio de Natal (curto vende mais)</h2>
-<p><span class="tag">Pedidos até 20/12</span><span class="tag">Retirada 23 e 24/12</span><span class="tag">40 vagas</span></p>
-<table>
-<tr><th>Item</th><th>Rende</th><th class="r">Preço (exemplo)</th></tr>
-<tr><td>Chocotone recheado de brigadeiro</td><td>500 g</td><td class="r">R$ 59</td></tr>
-<tr><td>Pavê de pêssego na travessa</td><td>8 porções</td><td class="r">R$ 89</td></tr>
-<tr><td>Torta holandesa</td><td>10 fatias</td><td class="r">R$ 110</td></tr>
-<tr><td>Farofa natalina com castanhas</td><td>1 kg</td><td class="r">R$ 65</td></tr>
-<tr><td>Salpicão de frango</td><td>1 kg</td><td class="r">R$ 72</td></tr>
-<tr><td>Caixa presente — 12 brigadeiros gourmet</td><td>12 un</td><td class="r">R$ 48</td></tr>
-</table>
-<p><small>Sinal de 50% no Pix para garantir a vaga. Encomenda confirmada só com o comprovante.</small></p>
-</section>
+<main class="wrap">
 
-<section>
-<h2>2. Calculadora de preço (quanto cobrar sem prejuízo)</h2>
-<div class="grid">
-<div><label>Ingredientes da receita (R$)</label><input id="ing" type="number" value="28"></div>
-<div><label>Embalagem (R$)</label><input id="emb" type="number" value="6"></div>
-<div><label>Horas de trabalho</label><input id="hrs" type="number" value="1.5" step="0.5"></div>
-<div><label>Valor da sua hora (R$)</label><input id="vh" type="number" value="15"></div>
-<div><label>Gás/luz/taxas (% do custo)</label><input id="fix" type="number" value="10"></div>
-<div><label>Lucro desejado (%)</label><input id="luc" type="number" value="40"></div>
-</div>
-<div class="res" id="out"></div>
-<p><small>Regra: (ingredientes + embalagem + horas × valor/hora) × (1 + gás/luz) × (1 + lucro).</small></p>
-</section>
+ <h2>Todo fim de ano é a mesma coisa?</h2>
+ <div class="pain">
+  <div><b>Preço de cabeça, lucro que some</b>O preço saiu de cabeça ou da concorrente. Na conta, ingrediente e gás comeram o lucro.</div>
+  <div><b>Pedido demais na véspera</b>Ninguém disse não no WhatsApp. Na véspera, faltou forno, faltou mão e sobrou estresse.</div>
+  <div><b>Cardápio grande demais</b>Quinze opções, cada pedido diferente, compra de ingrediente virou bagunça.</div>
+ </div>
 
-<section>
-<h2>3. Controle de vagas (não aceitar o que não dá para entregar)</h2>
-<p>Capacidade: <b>40 encomendas</b>, divididas em 23/12 (20) e 24/12 (20). A planilha de pedidos bloqueia o dia quando enche e avisa: <i>"vagas de 24/12 esgotadas, ainda tem 23/12"</i>.</p>
-<table>
-<tr><th>Campo do pedido</th><th>Por quê</th></tr>
-<tr><td>Nome e WhatsApp</td><td>Confirmar e avisar a retirada</td></tr>
-<tr><td>Itens e quantidades</td><td>Somar ingredientes da compra</td></tr>
-<tr><td>Dia de retirada/entrega</td><td>Respeitar o limite por dia</td></tr>
-<tr><td>Sinal pago (sim/não)</td><td>Só produz o que está pago</td></tr>
-<tr><td>Restrição (sem lactose, sem glúten)</td><td>Evitar erro e devolução</td></tr>
-</table>
-</section>
+ <h2>O que você recebe</h2>
+ <div class="get">
+  <div><b>Cardápio de Natal curto</b>Os itens que mais saem e dão lucro, prontos para mandar no WhatsApp.</div>
+  <div><b>Preço de cada item</b>Calculado com os seus custos e a sua hora, com a margem que você escolher.</div>
+  <div><b>Prazo de corte e vagas</b>Planilha de pedidos que trava o dia quando lota (no Completo).</div>
+  <div><b>3 mensagens de lista</b>Abertura, lembrete e fechamento, com os números reais da sua agenda.</div>
+ </div>
 
-<section>
-<h2>4. Mensagens para lista de transmissão e status</h2>
-<div class="msg"><b>Abertura (1/12)</b>
+ <h2>Como funciona</h2>
+ <div class="steps">
+  <div><b>Você conta</b><br>O que vende, quanto paga nos ingredientes e quantas encomendas cabem por dia. Um formulário de 10 linhas resolve.</div>
+  <div><b>Eu monto</b><br>Cardápio, preços, prazo de corte e mensagens, com os seus números.</div>
+  <div><b>Você divulga</b><br>Em até 48 h está tudo pronto para mandar na lista de transmissão e no status.</div>
+ </div>
+
+ <h2 id="pacotes">Pacotes</h2>
+ <div class="plans">
+  <div class="plan">
+   <h3>Básico</h3>
+   <p class="p">R$ 97</p>
+   <ul>
+    <li>Cardápio de Natal curto</li>
+    <li>Preço calculado de cada item</li>
+    <li>3 mensagens para lista de transmissão</li>
+    <li class="no">Planilha de vagas e prazo de corte</li>
+    <li class="no">3 artes editáveis para post e status</li>
+    <li class="no">1 rodada de ajuste</li>
+   </ul>
+   <a class="btn alt" href="https://www.99freelas.com.br/user/paulo-alves-1776188762304">Contratar o Básico</a>
+  </div>
+  <div class="plan top">
+   <h3>Completo</h3>
+   <p class="p">R$ 147</p>
+   <ul>
+    <li>Tudo do Básico</li>
+    <li><b>Planilha de pedidos com prazo de corte e vagas por dia</b></li>
+    <li>3 artes editáveis para post e status</li>
+    <li>1 rodada de ajuste</li>
+   </ul>
+   <a class="btn" href="https://www.99freelas.com.br/user/paulo-alves-1776188762304">Contratar o Completo</a>
+  </div>
+ </div>
+ <p class="note">Pagamento pelo 99Freelas, que segura o dinheiro até a entrega e protege os dois lados. Último pedido aceito: 15/12/2026, para dar tempo de você vender.</p>
+
+ <h2>Veja um kit pronto</h2>
+ <p class="aviso"><b>Amostra.</b> “Cozinha da Lu” é um negócio fictício e os preços e vagas são exemplos. No seu kit, tudo sai do seu cardápio, dos seus custos e da sua agenda.</p>
+
+ <section class="s">
+  <h3>1. Cardápio de Natal (curto vende mais)</h3>
+  <p><span class="tag">Pedidos até 20/12</span><span class="tag">Retirada 23 e 24/12</span><span class="tag">40 vagas</span></p>
+  <table>
+   <tr><th>Item</th><th>Rende</th><th class="r">Preço (exemplo)</th></tr>
+   <tr><td>Chocotone recheado de brigadeiro</td><td>500 g</td><td class="r">R$ 59</td></tr>
+   <tr><td>Pavê de pêssego na travessa</td><td>8 porções</td><td class="r">R$ 89</td></tr>
+   <tr><td>Torta holandesa</td><td>10 fatias</td><td class="r">R$ 110</td></tr>
+   <tr><td>Farofa natalina com castanhas</td><td>1 kg</td><td class="r">R$ 65</td></tr>
+   <tr><td>Salpicão de frango</td><td>1 kg</td><td class="r">R$ 72</td></tr>
+   <tr><td>Caixa presente com 12 brigadeiros</td><td>12 un</td><td class="r">R$ 48</td></tr>
+  </table>
+  <p><small>Sinal de 50% no Pix para garantir a vaga. Encomenda confirmada só com o comprovante.</small></p>
+ </section>
+
+ <section class="s">
+  <h3>2. Calculadora de preço: teste com uma receita sua</h3>
+  <div class="grid">
+   <div><label for="ing">Ingredientes da receita (R$)</label><input id="ing" type="number" inputmode="decimal" value="28"></div>
+   <div><label for="emb">Embalagem (R$)</label><input id="emb" type="number" inputmode="decimal" value="6"></div>
+   <div><label for="hrs">Horas de trabalho</label><input id="hrs" type="number" inputmode="decimal" value="1.5" step="0.5"></div>
+   <div><label for="vh">Valor da sua hora (R$)</label><input id="vh" type="number" inputmode="decimal" value="15"></div>
+   <div><label for="fix">Gás, luz e taxas (% do custo)</label><input id="fix" type="number" inputmode="decimal" value="10"></div>
+   <div><label for="luc">Lucro desejado (%)</label><input id="luc" type="number" inputmode="decimal" value="40"></div>
+  </div>
+  <div class="res" id="out"></div>
+  <p><small>Regra: (ingredientes + embalagem + horas × valor da hora) × (1 + gás/luz) × (1 + lucro).</small></p>
+ </section>
+
+ <section class="s">
+  <h3>3. Controle de vagas: não aceitar o que não dá para entregar</h3>
+  <p>Capacidade: <b>40 encomendas</b>, 20 em 23/12 e 20 em 24/12. A planilha bloqueia o dia quando enche e avisa: <i>“vagas de 24/12 esgotadas, ainda tem 23/12”</i>.</p>
+  <table>
+   <tr><th>Campo do pedido</th><th>Por quê</th></tr>
+   <tr><td>Nome e WhatsApp</td><td>Confirmar e avisar a retirada</td></tr>
+   <tr><td>Itens e quantidades</td><td>Somar os ingredientes da compra</td></tr>
+   <tr><td>Dia de retirada ou entrega</td><td>Respeitar o limite por dia</td></tr>
+   <tr><td>Sinal pago (sim/não)</td><td>Só produzir o que está pago</td></tr>
+   <tr><td>Restrição (sem lactose, sem glúten)</td><td>Evitar erro e devolução</td></tr>
+  </table>
+ </section>
+
+ <section class="s">
+  <h3>4. Mensagens para lista de transmissão e status</h3>
+  <div class="msg"><b>Abertura (1/12)</b>
 🎄 Abriram as encomendas de Natal da Cozinha da Lu!
 Chocotone, pavê, torta holandesa, farofa e salpicão, tudo feito em casa no dia.
-São só 40 vagas: pedidos até 20/12, retirada em 23 ou 24/12.
+São 40 vagas: pedidos até 20/12, retirada em 23 ou 24/12.
 Responda "QUERO" que eu mando o cardápio.</div>
-<div class="msg"><b>Lembrete (12/12)</b>
+  <div class="msg"><b>Lembrete (12/12)</b>
 Já foram 22 das 40 vagas de Natal 🎁
 O dia 24 está quase cheio, o 23 ainda tem espaço.
 Garanta com 50% de sinal no Pix.</div>
-<div class="msg"><b>Últimas vagas (18/12)</b>
-Últimas 6 vagas para o Natal ⏰
-Os pedidos fecham sexta (20/12). Depois disso não consigo aceitar mais, para não perder a qualidade.</div>
-<p><small>Os números de vagas são exemplos: no kit, a cliente atualiza pela planilha. Nunca anunciar escassez falsa.</small></p>
-</section>
+  <div class="msg"><b>Fechamento (18/12)</b>
+Restam 6 vagas para o Natal ⏰
+Os pedidos fecham domingo (20/12). Depois disso não aceito mais, para manter a qualidade.</div>
+  <p><small>Os números de vagas são exemplos. No kit, você atualiza pela planilha e só anuncia o que é verdade.</small></p>
+ </section>
 
-<section>
-<h2>5. Posts e status (formato quadrado)</h2>
-<div class="posts">
-<div class="post p1"><b>Encomendas de Natal abertas</b><span>40 vagas · até 20/12</span></div>
-<div class="post p2"><b>Ceia sem estresse</b><span>Você cuida da família, a gente cuida da farofa</span></div>
-<div class="post p3"><b>Presente que se come</b><span>Caixa com 12 brigadeiros · R$ 48</span></div>
-</div>
-</section>
+ <section class="s">
+  <h3>5. Artes para post e status (quadradas)</h3>
+  <div class="posts">
+   <div class="post p1"><b>Encomendas de Natal abertas</b><span>40 vagas · até 20/12</span></div>
+   <div class="post p2"><b>Ceia sem estresse</b><span>Você cuida da família, eu cuido da farofa</span></div>
+   <div class="post p3"><b>Presente que se come</b><span>Caixa com 12 brigadeiros · R$ 48</span></div>
+  </div>
+ </section>
 
-<section id="contratar">
-<h2>Quero o meu kit</h2>
-<table>
-<tr><th>Pacote</th><th>Inclui</th><th class="r">Preço</th></tr>
-<tr><td>Básico</td><td>Cardápio curto + preço calculado de cada item + 3 mensagens</td><td class="r">R$ 97</td></tr>
-<tr><td>Completo</td><td>Tudo acima + planilha de vagas + 3 artes editáveis + 1 ajuste</td><td class="r">R$ 147</td></tr>
-</table>
-<p>Entrega em até 48 h depois do briefing. Último pedido aceito: <b>15/12/2026</b>, para dar tempo de você vender.</p>
-<p id="cta"><b>Contrate pelo 99Freelas</b>, com pagamento protegido pela plataforma: <a href="https://www.99freelas.com.br/user/paulo-alves-1776188762304">ver perfil e mandar mensagem</a>.</p>
-</section>
+ <h2>Perguntas rápidas</h2>
+ <div class="faq">
+  <details><summary>Não tenho tempo de levantar os custos. E agora?</summary><p>Você preenche um formulário de 10 linhas (ingrediente, preço pago, quanto usa). O resto é comigo.</p></details>
+  <details><summary>Serve para salgados e ceia, não só doce?</summary><p>Serve. O método é o mesmo: cardápio curto, preço com custo real e limite de vagas por dia.</p></details>
+  <details><summary>Preciso saber mexer em planilha?</summary><p>Não. Você só preenche uma linha por pedido; a planilha soma e avisa quando o dia lota.</p></details>
+  <details><summary>Como pago?</summary><p>Pelo 99Freelas. A plataforma segura o pagamento e só libera depois da entrega.</p></details>
+ </div>
 
+ <div class="final">
+  <h2>Feche o Natal com lucro e com a agenda sob controle</h2>
+  <p>Pronto em até 48 h. Último pedido aceito em 15/12/2026.</p>
+  <a class="btn" href="https://www.99freelas.com.br/user/paulo-alves-1776188762304">Quero o meu kit</a>
+ </div>
 </main>
-<footer>Kit Encomendas de Natal · amostra de portfólio · entrega em até 48 h após o briefing</footer>
+
+<footer>Kit Encomendas de Natal · Paulo Alves · entrega em até 48 h depois do briefing</footer>
 <script>
 const ids=["ing","emb","hrs","vh","fix","luc"];
 function calc(){const v=Object.fromEntries(ids.map(i=>[i,parseFloat(document.getElementById(i).value)||0]));
 const custo=(v.ing+v.emb+v.hrs*v.vh)*(1+v.fix/100);const preco=custo*(1+v.luc/100);
-document.getElementById("out").textContent=`Custo real: R$ ${custo.toFixed(2)} · Preço sugerido: R$ ${Math.ceil(preco)}`;}
+document.getElementById("out").textContent=`Custo real: R$ ${custo.toFixed(2).replace(".",",")} · Preço sugerido: R$ ${Math.ceil(preco)}`;}
 ids.forEach(i=>document.getElementById(i).addEventListener("input",calc));calc();
 </script>
 </body>
