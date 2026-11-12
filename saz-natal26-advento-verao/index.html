@@ -3,82 +3,187 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Advento de Verão — 24 dias de Natal brasileiro em família</title>
-<meta name="description" content="Calendário do advento para imprimir, feito para o Natal no calor do Brasil: 24 experiências em família, a maioria de graça. PDF A4 por R$ 14,90.">
-<meta property="og:title" content="Advento de Verão — 24 dias de Natal brasileiro em família">
-<meta property="og:description" content="Sem neve, sem lareira: com sol, água gelada e quintal. 24 experiências para imprimir, a maioria custa R$ 0.">
+<title>Advento de Verão: 24 dias de Natal em família, 13 deles de graça</title>
+<meta name="description" content="Calendário do advento para imprimir, feito para o Natal no calor do Brasil. 24 programas em família para 1 a 24 de dezembro; 13 custam R$ 0, 10 custam até R$ 20 e o dia 24 é a ceia. PDF A4 por R$ 14,90.">
+<meta property="og:title" content="Advento de Verão: 24 dias de Natal em família, 13 deles de graça">
+<meta property="og:description" content="Sem neve, sem lareira: picolé, guerra de água, cinema de lençol. Imprima hoje, comece em 1º de dezembro.">
 <style>
-  :root{--teal:#17BEBB;--red:#E4572E;--sun:#FFC914;--blue:#2E86AB;--green:#76B041;--orange:#F18F01;--purple:#9B5DE5;--cream:#FFF6E5;--ink:#2b2b2b}
-  *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5}
-  header{background:var(--teal);color:#fff;position:relative;overflow:hidden;padding:56px 20px 64px;text-align:center}
-  header .sun{position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--sun)}
-  header small{display:block;letter-spacing:.12em;font-weight:700;opacity:.95;position:relative}
-  h1{font-size:clamp(40px,8vw,72px);line-height:1.05;margin:10px 0 12px;position:relative}
-  header p{font-size:clamp(17px,2.6vw,22px);margin:0 auto;max-width:640px;position:relative}
-  main{max-width:880px;margin:0 auto;padding:0 20px 40px}
-  .buy{background:#fff;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.08);padding:24px;margin:-36px auto 32px;max-width:560px;text-align:center;position:relative}
-  .price{font-size:40px;font-weight:800;color:var(--red);margin:0}
-  .btn{display:inline-block;margin-top:12px;padding:14px 28px;border-radius:999px;background:var(--red);color:#fff;font-weight:700;text-decoration:none;font-size:18px}
-  .btn[aria-disabled=true]{background:#bbb;cursor:not-allowed}
-  .note{font-size:14px;color:#666;margin:10px 0 0}
-  h2{font-size:26px;margin:36px 0 14px}
-  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-  .card{background:#fff;border-radius:12px;overflow:hidden;border:2px solid var(--c)}
-  .card .top{background:var(--c);color:#fff;padding:10px 14px;display:flex;gap:12px;align-items:center}
-  .card .n{background:#fff;color:var(--c);width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:18px;flex:none}
-  .card .t{font-weight:700}
-  .card p{margin:0;padding:12px 14px 4px;font-size:15px}
-  .card .cost{display:inline-block;margin:6px 14px 14px;background:var(--cream);padding:2px 10px;border-radius:6px;font-size:13px;font-weight:700;color:#555}
-  ul.inc{padding-left:20px} ul.inc li{margin:6px 0}
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;counter-reset:s}
-  .steps div{background:#fff;border-radius:12px;padding:14px}
-  .steps b{display:block;color:var(--blue)}
-  footer{text-align:center;font-size:13px;color:#777;padding:24px 20px 40px}
+:root{--teal:#0FA3A0;--red:#E4572E;--sun:#FFC914;--blue:#2E86AB;--green:#5E9E2F;--orange:#F18F01;--purple:#8A4FD8;--cream:#FFF6E5;--ink:#222}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+/* HERO */
+.hero{background:var(--teal);color:#fff;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:var(--sun)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding-top:40px;padding-bottom:48px;position:relative}
+.kicker{display:inline-block;background:rgba(0,0,0,.18);padding:4px 12px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.06em}
+h1{font-size:clamp(32px,5.4vw,54px);line-height:1.06;margin:14px 0 12px;letter-spacing:-.01em}
+h1 em{font-style:normal;background:var(--sun);color:var(--ink);padding:0 .18em;border-radius:6px}
+.lead{font-size:clamp(17px,2.2vw,20px);margin:0 0 20px;max-width:34em}
+.btn{display:inline-block;padding:16px 30px;border-radius:999px;background:var(--red);color:#fff;font-weight:800;text-decoration:none;font-size:19px;box-shadow:0 6px 0 #b13d1c}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #b13d1c}
+.under{font-size:14px;margin:12px 0 0;opacity:.95}
+.mock{width:100%;height:auto;filter:drop-shadow(0 14px 24px rgba(0,0,0,.25))}
+/* STRIP */
+.strip{background:#fff;border-bottom:1px solid #eadfca}
+.strip ul{list-style:none;margin:0;padding:14px 0;display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;font-weight:700;font-size:15px}
+.strip li:before{content:"✓ ";color:var(--green)}
+h2{font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:44px 0 12px}
+.sub{margin:0 0 18px;font-size:17px;max-width:40em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{background:#fff;border-radius:12px;overflow:hidden;border:2px solid var(--c)}
+.card .top{background:var(--c);color:#fff;padding:10px 12px;display:flex;gap:10px;align-items:center}
+.card .n{background:#fff;color:var(--c);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:800;flex:none}
+.card .t{font-weight:700;line-height:1.2}
+.card p{margin:0;padding:10px 12px 4px;font-size:15px}
+.card .cost{display:inline-block;margin:6px 12px 12px;background:var(--cream);padding:2px 10px;border-radius:6px;font-size:13px;font-weight:700;color:#555}
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pain div{background:#fff;border-radius:12px;padding:16px 18px}
+.pain b{display:block;margin-bottom:4px}
+.pain .no b{color:#999;text-decoration:line-through}
+.pain .yes{border:2px solid var(--teal)}
+.pain .yes b{color:var(--teal)}
+ul.inc{padding-left:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+ul.inc li{background:#fff;border-radius:10px;padding:12px 14px}
+ul.inc li b{display:block;color:var(--blue)}
+.offer{background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.08);padding:26px;text-align:center;max-width:560px;margin:40px auto 0;border-top:6px solid var(--red)}
+.offer .price{font-size:48px;font-weight:900;color:var(--red);margin:4px 0 0;line-height:1}
+.offer .per{margin:6px 0 4px;color:#555}
+.offer ul{text-align:left;max-width:380px;margin:16px auto;padding-left:20px}
+.guar{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:16px;font-size:14px;color:#444;text-align:left}
+.guar svg{flex:none}
+.faq details{background:#fff;border-radius:10px;padding:12px 16px;margin:8px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin:8px 0 0}
+.date{background:var(--sun);border-radius:12px;padding:14px 18px;font-weight:700;margin:28px 0 0;text-align:center}
+footer{text-align:center;font-size:13px;color:#777;padding:30px 20px 90px}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;box-shadow:0 -4px 16px rgba(0,0,0,.12);padding:10px 16px;display:none;align-items:center;justify-content:space-between;gap:10px;z-index:9}
+.sticky b{font-size:18px;color:var(--red)}
+.sticky a{background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:12px 18px;border-radius:999px}
+@media (max-width:760px){
+ .hero .wrap{grid-template-columns:1fr;padding-top:28px;text-align:center}
+ .hero .mockbox{order:-1;max-width:330px;margin:0 auto}
+ .lead{margin-left:auto;margin-right:auto}
+ .pain{grid-template-columns:1fr}
+ .sticky{display:flex}
+}
 </style>
 </head>
 <body>
-<header>
-  <div class="sun" aria-hidden="true"></div>
-  <small>CALENDÁRIO DO ADVENTO PARA IMPRIMIR</small>
-  <h1>Advento de Verão</h1>
-  <p>24 dias de Natal brasileiro em família. Sem neve, sem lareira: com sol, água gelada e quintal.</p>
-</header>
-<main>
-  <section class="buy">
-    <p class="price">R$ 14,90</p>
-    <div>PDF A4 · 8 páginas · imprima quantas vezes quiser</div>
-    <a class="btn" href="https://pay.hotmart.com/A108442689G">Comprar por R$ 14,90</a>
-    <p class="note">Pagamento e entrega do PDF pela Hotmart, com 7 dias de garantia de reembolso.</p>
-  </section>
 
-  <h2>Uma experiência por dia, de 1 a 24 de dezembro</h2>
-  <p>A família abre um cartão por dia e faz a atividade junta. A maioria custa R$ 0 e nenhuma passa de R$ 20. Alguns dos 24 cartões:</p>
-  <div class="cards">
-    <div class="card" style="--c:var(--purple)"><div class="top"><span class="n">2</span><span class="t">Picolé de fruta da estação</span></div><p>Batam manga, melancia ou abacaxi, ponham em copinhos com palito e congelem.</p><span class="cost">até R$ 15</span></div>
-    <div class="card" style="--c:var(--blue)"><div class="top"><span class="n">3</span><span class="t">Guerra de água</span></div><p>Balões de água, borrifadores ou mangueira no quintal, na laje ou na praça.</p><span class="cost">até R$ 10</span></div>
-    <div class="card" style="--c:var(--green)"><div class="top"><span class="n">5</span><span class="t">Cinema de lençol</span></div><p>Lençol branco na parede, luz apagada, pipoca na panela e ingressos feitos à mão.</p><span class="cost">até R$ 8</span></div>
-    <div class="card" style="--c:var(--purple)"><div class="top"><span class="n">9</span><span class="t">Doce para o vizinho</span></div><p>Brigadeiro de enrolar numa caixinha para o vizinho, o porteiro ou a avó.</p><span class="cost">até R$ 15</span></div>
-    <div class="card" style="--c:var(--red)"><div class="top"><span class="n">13</span><span class="t">Gentileza secreta</span></div><p>Cada um sorteia alguém da casa e faz uma gentileza escondida. À noite, todos adivinham.</p><span class="cost">R$ 0</span></div>
-    <div class="card" style="--c:var(--orange)"><div class="top"><span class="n">18</span><span class="t">Passeio das luzes</span></div><p>Caminhada à noite pelo bairro para achar as casas mais iluminadas. Notas de 0 a 10.</p><span class="cost">R$ 0</span></div>
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="kicker">CALENDÁRIO DO ADVENTO PARA IMPRIMIR</span>
+   <h1>24 dias de Natal em família. <em>13 deles de graça.</em></h1>
+   <p class="lead">Um programa por dia, de 1 a 24 de dezembro, pensado para o Natal no calor: picolé de fruta, guerra de água, cinema de lençol. Sem neve, sem lareira, sem gastar muito.</p>
+   <a class="btn" href="https://pay.hotmart.com/A108442689G">Quero o meu por R$ 14,90</a>
+   <p class="under">PDF na hora pela Hotmart · imprime em casa · 7 dias de garantia</p>
   </div>
+  <div class="mockbox">
+   <!-- Mockup: cartões impressos pendurados no varal. Ilustração própria, sem imagem de terceiros. -->
+   <svg class="mock" viewBox="0 0 420 360" role="img" aria-label="Cartões do Advento de Verão pendurados num barbante">
+    <path d="M10 40 Q210 110 410 40" fill="none" stroke="#fff" stroke-width="3"/>
+    <g transform="translate(28,52) rotate(-6)">
+     <rect width="110" height="150" rx="8" fill="#fff"/><rect width="110" height="46" rx="8" fill="#8A4FD8"/><rect y="38" width="110" height="8" fill="#8A4FD8"/>
+     <circle cx="24" cy="23" r="15" fill="#fff"/><text x="24" y="29" font-size="16" font-weight="800" text-anchor="middle" fill="#8A4FD8" font-family="system-ui,Arial">2</text>
+     <text x="46" y="27" font-size="9" font-weight="700" fill="#fff" font-family="system-ui,Arial">DEZEMBRO</text>
+     <text x="10" y="62" font-size="10" font-weight="800" fill="#222" font-family="system-ui,Arial">Picolé de fruta</text>
+     <rect x="10" y="78" width="90" height="4" rx="2" fill="#eee"/><rect x="10" y="88" width="80" height="4" rx="2" fill="#eee"/><rect x="10" y="98" width="86" height="4" rx="2" fill="#eee"/>
+     <rect x="10" y="124" width="66" height="16" rx="4" fill="#FFF6E5"/><text x="15" y="135" font-size="8" font-weight="700" fill="#555" font-family="system-ui,Arial">até R$ 15</text>
+     <rect x="47" y="-10" width="16" height="22" rx="3" fill="#FFC914"/>
+    </g>
+    <g transform="translate(155,74) rotate(2)">
+     <rect width="110" height="150" rx="8" fill="#fff"/><rect width="110" height="46" rx="8" fill="#2E86AB"/><rect y="38" width="110" height="8" fill="#2E86AB"/>
+     <circle cx="24" cy="23" r="15" fill="#fff"/><text x="24" y="29" font-size="16" font-weight="800" text-anchor="middle" fill="#2E86AB" font-family="system-ui,Arial">3</text>
+     <text x="46" y="27" font-size="9" font-weight="700" fill="#fff" font-family="system-ui,Arial">DEZEMBRO</text>
+     <text x="10" y="62" font-size="10" font-weight="800" fill="#222" font-family="system-ui,Arial">Guerra de água</text>
+     <rect x="10" y="78" width="90" height="4" rx="2" fill="#eee"/><rect x="10" y="88" width="84" height="4" rx="2" fill="#eee"/><rect x="10" y="98" width="70" height="4" rx="2" fill="#eee"/>
+     <rect x="10" y="124" width="66" height="16" rx="4" fill="#FFF6E5"/><text x="15" y="135" font-size="8" font-weight="700" fill="#555" font-family="system-ui,Arial">até R$ 10</text>
+     <rect x="47" y="-10" width="16" height="22" rx="3" fill="#FFC914"/>
+    </g>
+    <g transform="translate(282,56) rotate(7)">
+     <rect width="110" height="150" rx="8" fill="#fff"/><rect width="110" height="46" rx="8" fill="#E4572E"/><rect y="38" width="110" height="8" fill="#E4572E"/>
+     <circle cx="24" cy="23" r="15" fill="#fff"/><text x="24" y="29" font-size="16" font-weight="800" text-anchor="middle" fill="#E4572E" font-family="system-ui,Arial">13</text>
+     <text x="46" y="27" font-size="9" font-weight="700" fill="#fff" font-family="system-ui,Arial">DEZEMBRO</text>
+     <text x="10" y="62" font-size="10" font-weight="800" fill="#222" font-family="system-ui,Arial">Gentileza secreta</text>
+     <rect x="10" y="78" width="90" height="4" rx="2" fill="#eee"/><rect x="10" y="88" width="76" height="4" rx="2" fill="#eee"/><rect x="10" y="98" width="88" height="4" rx="2" fill="#eee"/>
+     <rect x="10" y="124" width="40" height="16" rx="4" fill="#FFF6E5"/><text x="15" y="135" font-size="8" font-weight="700" fill="#555" font-family="system-ui,Arial">R$ 0</text>
+     <rect x="47" y="-10" width="16" height="22" rx="3" fill="#FFC914"/>
+    </g>
+    <g transform="translate(70,238)">
+     <rect width="290" height="96" rx="10" fill="#FFF6E5"/>
+     <text x="145" y="30" font-size="15" font-weight="800" text-anchor="middle" fill="#222" font-family="system-ui,Arial">PDF A4 · 8 páginas</text>
+     <text x="145" y="54" font-size="12" text-anchor="middle" fill="#444" font-family="system-ui,Arial">24 cartões + 6 em branco</text>
+     <text x="145" y="74" font-size="12" text-anchor="middle" fill="#444" font-family="system-ui,Arial">calendário para marcar + guia</text>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
 
-  <h2>O que vem no PDF</h2>
-  <ul class="inc">
-    <li>24 cartões numerados, com custo indicado e espaço para a lembrança do dia</li>
-    <li>6 cartões em branco para as ideias da sua família</li>
-    <li>Calendário para marcar os dias cumpridos</li>
-    <li>Guia rápido de montagem e dicas para gastar pouco</li>
+<div class="strip"><ul>
+ <li>13 dos 24 programas custam R$ 0</li><li>10 custam até R$ 20</li><li>Imprime em preto e branco</li><li>Começa em 1º de dezembro</li>
+</ul></div>
+
+<main class="wrap">
+
+ <h2>O Natal daqui não tem neve. O seu calendário também não precisa ter.</h2>
+ <div class="pain">
+  <div class="no"><b>Calendário de loja</b>Chocolate derretendo, boneco de neve, lareira. Bonito, caro, e não combina com 32 °C.</div>
+  <div class="yes"><b>Advento de Verão</b>Um programa por dia para fazer junto, com o que já tem em casa, no quintal, na laje ou na praça.</div>
+ </div>
+
+ <h2>Alguns dos 24 programas</h2>
+ <p class="sub">Cada cartão traz o número do dia, a atividade, o custo e um espaço para anotar a lembrança.</p>
+ <div class="cards">
+  <div class="card" style="--c:var(--purple)"><div class="top"><span class="n">2</span><span class="t">Picolé de fruta da estação</span></div><p>Batam manga, melancia ou abacaxi, ponham em copinhos com palito e congelem.</p><span class="cost">até R$ 15</span></div>
+  <div class="card" style="--c:var(--blue)"><div class="top"><span class="n">3</span><span class="t">Guerra de água</span></div><p>Balões, borrifadores ou mangueira no quintal, na laje ou na praça. Vale Papai Noel de bermuda.</p><span class="cost">até R$ 10</span></div>
+  <div class="card" style="--c:var(--green)"><div class="top"><span class="n">5</span><span class="t">Cinema de lençol</span></div><p>Lençol branco na parede, luz apagada, pipoca na panela e ingressos feitos à mão.</p><span class="cost">até R$ 8</span></div>
+  <div class="card" style="--c:var(--orange)"><div class="top"><span class="n">12</span><span class="t">Acampamento na sala</span></div><p>Barraca de lençol e cadeiras, lanterna, colchões no chão e histórias antes de dormir.</p><span class="cost">R$ 0</span></div>
+  <div class="card" style="--c:var(--red)"><div class="top"><span class="n">13</span><span class="t">Gentileza secreta</span></div><p>Cada um sorteia alguém da casa e faz uma gentileza escondida. À noite, todos adivinham.</p><span class="cost">R$ 0</span></div>
+  <div class="card" style="--c:var(--teal)"><div class="top"><span class="n">18</span><span class="t">Passeio das luzes</span></div><p>Caminhada à noite pelo bairro para achar as casas mais iluminadas. Notas de 0 a 10.</p><span class="cost">R$ 0</span></div>
+ </div>
+
+ <h2>O que vem no PDF</h2>
+ <ul class="inc">
+  <li><b>24 cartões numerados</b>Um por dia, com custo indicado e espaço para a lembrança.</li>
+  <li><b>6 cartões em branco</b>Para as ideias da sua família ou para trocar um dia de chuva.</li>
+  <li><b>Calendário para marcar</b>Pinte o dia cumprido. Vira recordação do Natal deste ano.</li>
+  <li><b>Guia rápido</b>Como montar o varal de cartões e dicas para gastar pouco.</li>
+ </ul>
+
+ <div class="date">Começa em 1º de dezembro: compre, imprima e pendure antes.</div>
+
+ <section class="offer" id="comprar">
+  <div>Advento de Verão · PDF A4</div>
+  <p class="price">R$ 14,90</p>
+  <p class="per">Menos de R$ 0,63 por dia de programa em família.</p>
+  <ul>
+   <li>Download na hora, pela Hotmart</li>
+   <li>Imprima quantas vezes quiser, para uso da sua família</li>
+   <li>Funciona com papel A4 comum, em cores ou preto e branco</li>
   </ul>
-
-  <h2>Como montar</h2>
-  <div class="steps">
-    <div><b>1. Imprima</b>Papel A4 comum, em cores ou preto e branco.</div>
-    <div><b>2. Recorte</b>Na linha tracejada de cada cartão.</div>
-    <div><b>3. Esconda</b>Em envelopes, saquinhos ou meias num barbante.</div>
-    <div><b>4. Abra um por dia</b>De 1 a 24 de dezembro.</div>
+  <a class="btn" href="https://pay.hotmart.com/A108442689G">Quero o meu por R$ 14,90</a>
+  <div class="guar">
+   <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3l14 5v10c0 9-6 16-14 19C12 34 6 27 6 18V8z" fill="#0FA3A0"/><path d="M13 20l5 5 9-10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>
+   <span><b>7 dias de garantia.</b> Não gostou? Peça o reembolso pela Hotmart dentro de 7 dias.</span>
   </div>
+ </section>
+
+ <h2>Perguntas rápidas</h2>
+ <div class="faq">
+  <details><summary>Para que idade serve?</summary><p>Para a família toda. Os programas são simples o bastante para crianças pequenas com um adulto e divertidos para os mais velhos. Atividades com faca, fogão ou rua são sempre com um adulto.</p></details>
+  <details><summary>Preciso de impressora colorida?</summary><p>Não. O PDF foi feito para funcionar em preto e branco, em papel A4 comum.</p></details>
+  <details><summary>Recebo alguma coisa em casa?</summary><p>Não. É um arquivo digital: você baixa o PDF logo após o pagamento e imprime.</p></details>
+  <details><summary>E se chover ou não der num dia?</summary><p>Troque o cartão com outro dia ou use um dos 6 cartões em branco. O objetivo é passar tempo junto, não cumprir lista.</p></details>
+  <details><summary>Tem tema religioso?</summary><p>Não. É sobre convivência em família. Dá para combinar com as tradições da sua casa.</p></details>
+ </div>
 </main>
-<footer>Produto digital para uso pessoal e familiar. Nenhum produto físico é enviado.</footer>
+
+<footer>Advento de Verão · Autoria: Paulo Alves · Produto digital para uso pessoal e familiar. Nenhum produto físico é enviado.</footer>
+
+<div class="sticky"><span><b>R$ 14,90</b> · PDF na hora</span><a href="https://pay.hotmart.com/A108442689G">Comprar</a></div>
 </body>
 </html>
