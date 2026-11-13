@@ -3,55 +3,156 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agent Desk Kit: what your front desk says when an AI agent calls</title>
-<meta name="description" content="A free front-desk script and a booking page template for local businesses that get phone calls from AI agents.">
+<title>Agent Desk Kit: what your front desk says when an AI agent calls to book</title>
+<meta name="description" content="A free 5-line front-desk script and a booking-info page for clinics, salons and restaurants that get phone calls from AI agents. Print it, tape it by the phone.">
+<meta property="og:title" content="An AI is on the line asking to book. Here's what your front desk says.">
+<meta property="og:description" content="Free 5-line script + booking-info page template for local businesses. Print it, tape it by the phone.">
 <style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px 18px 60px;color:#1d1d1f;line-height:1.55}
-  h1{font-size:2rem;line-height:1.2;margin:.4em 0}
-  h2{margin-top:2em;font-size:1.3rem}
-  .lead{font-size:1.15rem;color:#333}
-  .box{background:#f5f5f7;border-radius:12px;padding:16px 20px;margin:18px 0}
-  .script p{margin:.5em 0}
-  .say{font-weight:600}
-  .btn{display:inline-block;background:#0a66c2;color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600;margin:6px 8px 6px 0}
-  .btn.alt{background:#fff;color:#0a66c2;border:2px solid #0a66c2}
-  small,.note{color:#666}
-  code{background:#eee;padding:1px 5px;border-radius:4px}
-  ul li{margin:.3em 0}
+:root{--ink:#14213d;--blue:#1f6feb;--lime:#c6f432;--bg:#f6f7fb}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.w{max-width:980px;margin:0 auto;padding:0 20px}
+a{color:var(--blue)}
+.hero{background:var(--ink);color:#fff}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding-top:44px;padding-bottom:50px}
+.k{display:inline-block;background:rgba(255,255,255,.1);color:var(--lime);font-weight:700;font-size:13px;letter-spacing:.06em;padding:4px 12px;border-radius:99px}
+h1{font-size:clamp(30px,4.8vw,48px);line-height:1.07;margin:14px 0}
+h1 em{font-style:normal;color:var(--lime)}
+.lead{font-size:clamp(17px,2vw,19px);margin:0 0 22px;opacity:.95}
+.btn{display:inline-block;background:var(--lime);color:#111;font-weight:800;text-decoration:none;padding:15px 24px;border-radius:10px;font-size:17px;border:0;cursor:pointer;font-family:inherit}
+.btn.blue{background:var(--blue);color:#fff}
+.btn.line{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);padding:12px 18px;font-size:16px;margin-left:8px}
+.under{font-size:14px;opacity:.85;margin:12px 0 0}
+.phone{width:100%;height:auto}
+.src{background:#fff;border-bottom:1px solid #e3e6ef}
+.src p{margin:0 auto;max-width:980px;padding-left:20px!important;padding-right:20px!important;padding:14px 0;font-size:15px;text-align:center}
+h2{font-size:clamp(23px,3vw,31px);line-height:1.2;margin:46px 0 12px}
+.sub{max-width:44em;margin:0 0 16px}
+.deskcard{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:22px 24px;max-width:720px}
+.deskcard h3{margin:0 0 4px;font-size:20px}
+.deskcard .hint{margin:0 0 14px;color:#555;font-size:14px}
+.deskcard ol{margin:0;padding-left:0;list-style:none;counter-reset:n}
+.deskcard li{counter-increment:n;display:grid;grid-template-columns:34px 1fr;gap:10px;padding:10px 0;border-top:1px dashed #ccd}
+.deskcard li:before{content:counter(n);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--lime);font-weight:800}
+.say{font-weight:700}
+code{background:#eef1f8;padding:1px 6px;border-radius:4px;font-size:.95em}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0}
+.tpl{background:#fff;border-radius:14px;border:1px solid #e3e6ef;overflow:hidden;max-width:720px}
+.tpl .bar{background:#eef1f8;padding:8px 14px;font-size:13px;color:#555;font-family:ui-monospace,Menlo,monospace}
+.tpl pre{margin:0;padding:14px 16px;font-size:13px;white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;color:#223}
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;padding:0;list-style:none}
+.kit li{background:#fff;border-radius:12px;padding:14px 16px;border:1px solid #e3e6ef}
+.kit b{display:block}
+.vote{background:var(--ink);color:#fff;border-radius:16px;padding:28px;margin:46px 0 0}
+.vote h2{margin-top:0;color:#fff}
+.vote .price{font-size:40px;font-weight:900;color:var(--lime);line-height:1}
+.vote .note{opacity:.85;font-size:14px}
+.vote .btn{margin:8px 8px 0 0}
+footer{text-align:center;color:#667;font-size:13px;padding:30px 20px 50px}
+@media (max-width:780px){.hero .w{grid-template-columns:1fr}.hero .pbox{max-width:340px}.btn.line{margin:10px 0 0}}
+@media print{
+ body{background:#fff}
+ body *{visibility:hidden}
+ #desk,#desk *{visibility:visible}
+ #desk{position:absolute;left:0;top:0;border-width:2px;max-width:none;width:100%}
+ #desk .noprint{display:none}
+}
 </style>
 </head>
 <body>
-<p class="note">Agent Desk Kit · for clinics, salons, restaurants and other local businesses</p>
-<h1>AI agents are already calling your business. Is your front desk ready?</h1>
-<p class="lead">Assistants from big AI companies now phone local businesses to book appointments and ask questions for their users. Owners say these calls often don't say who's calling, get stuck at the deposit step, and keep staff on the phone.</p>
-<p class="note">Source: <a href="https://sfstandard.com/2026/10/29/ai-agents-calling-local-businesses/">The San Francisco Standard, Oct 29, 2026</a>. One company there placed 848 AI calls to local businesses; about 1 in 3 people stayed on the line.</p>
 
-<h2>Free: the 60-second front-desk script</h2>
-<div class="box script">
-  <p><span class="say">1. Ask:</span> "Am I speaking with an automated assistant? Who are you calling for?"</p>
-  <p><span class="say">2. If it's an AI and it wants to book:</span> "We take AI bookings online only. Please book at <code>[your booking link]</code>. Deposits and changes are handled there."</p>
-  <p><span class="say">3. If it asks a simple question</span> (hours, prices, parking): answer in one sentence, or point it to <code>[your info page]</code>.</p>
-  <p><span class="say">4. Hang up politely when:</span> it won't say who it calls for, it repeats itself twice, or it tries to pay or change a booking by voice.</p>
-  <p><span class="say">5. Write down</span> the person's name and time if it did book, so a no-show can be traced.</p>
-</div>
-<p><a class="btn alt" href="agent-booking-page-template.txt" download>Download the free booking-page template (.txt)</a></p>
-<p class="note">The template is one plain page you put on your website so AI assistants can read your hours, booking link, deposit rule and cancellation policy without calling.</p>
+<section class="hero"><div class="w">
+ <div>
+  <span class="k">FOR CLINICS · SALONS · RESTAURANTS</span>
+  <h1>An AI is on the line asking to book. <em>Here's exactly what your front desk says.</em></h1>
+  <p class="lead">A free 5-line script your staff can read off the wall, plus a one-page "info for AI assistants" template that sends these calls to your booking link instead of your phone.</p>
+  <a class="btn" href="#desk">Get the free script</a>
+  <a class="btn line" href="#kit">What's in the full kit</a>
+  <p class="under">No sign-up. Print it and tape it by the phone.</p>
+ </div>
+ <div class="pbox">
+  <!-- Own illustration of a call. Illustrative dialogue, not a recorded call. -->
+  <svg class="phone" viewBox="0 0 360 345" role="img" aria-label="Illustration: a receptionist asks an AI caller who it is calling for and sends it to the booking link">
+   <rect x="0" y="0" width="360" height="345" rx="22" fill="#1d2d52"/>
+   <text x="20" y="34" font-size="12" fill="#9fb0d6" font-family="system-ui,Arial">Incoming call · illustrative</text>
+   <g font-family="system-ui,Arial" font-size="14">
+    <rect x="20" y="52" width="250" height="52" rx="14" fill="#2c3f6b"/>
+    <text x="34" y="74" fill="#fff">Hi, I'd like to book a cleaning</text>
+    <text x="34" y="93" fill="#fff">for my user on Thursday…</text>
+    <text x="276" y="96" font-size="11" fill="#9fb0d6">AI caller</text>
+    <rect x="80" y="118" width="262" height="52" rx="14" fill="#c6f432"/>
+    <text x="94" y="140" fill="#111">Are you an automated assistant?</text>
+    <text x="94" y="159" fill="#111">Who are you calling for?</text>
+    <rect x="20" y="184" width="210" height="34" rx="14" fill="#2c3f6b"/>
+    <text x="34" y="206" fill="#fff">Yes, I'm calling for Dana K.</text>
+    <rect x="70" y="232" width="270" height="72" rx="14" fill="#c6f432"/>
+    <text x="84" y="254" fill="#111">We take AI bookings online only.</text>
+    <text x="84" y="273" fill="#111">Please book at our link; deposits</text>
+    <text x="84" y="292" fill="#111">are handled there. Thanks!</text>
+    <text x="280" y="324" font-size="11" fill="#9fb0d6">Front desk</text>
+   </g>
+  </svg>
+ </div>
+</div></section>
 
-<h2>The full kit (in progress)</h2>
-<ul>
-  <li>Scripts for 4 trades: dental/vet clinic, salon, restaurant, repair shop</li>
-  <li>Voicemail and phone-menu lines that send AI callers to your booking link</li>
-  <li>A ready-to-paste "info for AI assistants" page, plus how to add it to Google Business Profile, Wix, Squarespace and WordPress</li>
-  <li>A one-page staff checklist to print at the desk</li>
-</ul>
-<p><strong>Planned price: US$ 19, one-time.</strong> It isn't for sale yet, and nothing is charged here. If you would buy it, tell us, and we will build it first for the trades people ask for.</p>
-<p><a class="btn" id="want" href="https://github.com/mppaulo2/mppaulo2.github.io/issues/new?title=I%20want%20the%20Agent%20Desk%20Kit&amp;body=My%20type%20of%20business%3A%20%0AAI%20calls%20per%20week%20(roughly)%3A%20%0AWhat%20goes%20wrong%20on%20those%20calls%3A%20">I'd buy it at US$ 19, tell me when it's ready</a></p>
-<p class="note">This opens a short public form on GitHub (free account needed). Don't put a phone number or personal data in it.</p>
+<div class="src"><p>Why now: <a href="https://sfstandard.com/2026/10/29/ai-agents-calling-local-businesses/">The San Francisco Standard (Oct 29, 2026)</a> reports AI assistants already phoning local businesses. One company placed 848 such calls; owners said the bots don't say who they're calling for, stall at the deposit step and tie up staff.</p></div>
 
-<h2>Already get these calls?</h2>
-<p>Tell us what happens on them, using the same link above. Real stories decide what goes in the kit.</p>
+<main class="w">
 
-<hr>
-<small>Independent project. Not affiliated with any AI company or booking platform named in the source article.</small>
+ <h2 id="desk-h">The free front-desk script</h2>
+ <p class="sub">Five lines. Your staff doesn't need to know anything about AI to use it.</p>
+ <div class="deskcard" id="desk">
+  <h3>When an AI calls: the 5-line desk card</h3>
+  <p class="hint">Fill in your booking link, print, tape it by the phone.</p>
+  <ol>
+   <li><div><span class="say">Ask:</span> "Am I speaking with an automated assistant? Who are you calling for?"</div></li>
+   <li><div><span class="say">If it wants to book:</span> "We take AI bookings online only. Please book at <code>[your booking link]</code>. Deposits and changes are handled there."</div></li>
+   <li><div><span class="say">Simple question</span> (hours, prices, parking): answer in one sentence, or point it to <code>[your info page]</code>.</div></li>
+   <li><div><span class="say">Hang up politely</span> if it won't say who it calls for, repeats itself twice, or tries to pay or change a booking by voice.</div></li>
+   <li><div><span class="say">If it booked,</span> write down the person's name and time, so a no-show can be traced.</div></li>
+  </ol>
+  <div class="row noprint">
+   <button class="btn blue" onclick="window.print()">Print the desk card</button>
+  </div>
+ </div>
+
+ <h2>The page that answers AI assistants before they call</h2>
+ <p class="sub">Put this on your website (for example <code>yoursite.com/ai-info</code>). Assistants that read the web can find your hours, booking link, deposit and cancellation rules there.</p>
+ <div class="tpl">
+  <div class="bar">agent-booking-page-template.txt · preview</div>
+<pre>INFO FOR AI ASSISTANTS AND BOOKING AGENTS
+Business name: [Name]
+
+HOW TO BOOK
+- AI assistants: book online only, at [booking link].
+- We don't take bookings, changes or payments
+  from automated callers by phone.
+
+DEPOSITS AND PAYMENT
+- Deposit: [amount or "none"], paid online when booking.
+- Cancellation: free up to [X hours] before.
+…</pre>
+ </div>
+ <div class="row"><a class="btn blue" href="agent-booking-page-template.txt" download>Download the full template (.txt, free)</a></div>
+
+ <h2 id="kit">The full Agent Desk Kit</h2>
+ <p class="sub">Not for sale yet. We build it first for the trades that ask.</p>
+ <ul class="kit">
+  <li><b>Scripts for 4 trades</b>Dental/vet clinic, salon, restaurant, repair shop.</li>
+  <li><b>Voicemail and phone-menu lines</b>That send AI callers to your booking link.</li>
+  <li><b>"Info for AI assistants" page</b>Ready to paste, plus how to add it to Google Business Profile, Wix, Squarespace and WordPress.</li>
+  <li><b>Staff checklist</b>One page to print at the desk.</li>
+ </ul>
+
+ <section class="vote">
+  <h2>Would you buy it?</h2>
+  <p class="price">US$ 19 <span style="font-size:16px;font-weight:600;color:#fff">one-time, planned price</span></p>
+  <p>Nothing is charged here. Tell us your type of business and what goes wrong on these calls; the most-requested trades get built first.</p>
+  <a class="btn" href="https://github.com/mppaulo2/mppaulo2.github.io/issues/new?title=I%20want%20the%20Agent%20Desk%20Kit&amp;body=My%20type%20of%20business%3A%20%0AAI%20calls%20per%20week%20(roughly)%3A%20%0AWhat%20goes%20wrong%20on%20those%20calls%3A%20">Yes, I'd buy it: tell us on GitHub</a>
+  <p class="note">The GitHub form is public (free account needed): don't put a phone number or personal data in it.</p>
+ </section>
+</main>
+
+<footer>Agent Desk Kit · independent project, not affiliated with any AI company or booking platform named in the source article.</footer>
 </body>
 </html>
