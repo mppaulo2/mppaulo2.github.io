@@ -3,58 +3,173 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dossiê EUDR para pequenos exportadores de café</title>
-<meta name="description" content="Geolocalização das fazendas e checagem de desmatamento pós-2020 para lotes de café vendidos à União Europeia. Piloto em pré-venda.">
+<title>Dossiê EUDR · o arquivo de geolocalização que o seu importador europeu pede</title>
+<meta name="description" content="Polígono por talhão, coordenadas dos fornecedores pequenos e um GeoJSON único por lote no formato da documentação oficial do TRACES. Para cooperativas, exportadores e torrefações de café. Amostra de 1 fornecedor antes de pagar.">
+<meta property="og:title" content="Seu importador pediu o GeoJSON das fazendas? Montamos o arquivo do lote.">
+<meta property="og:description" content="Para cooperativas e exportadores de café com fornecedores pequenos. Amostra de 1 fornecedor antes de qualquer pagamento.">
 <style>
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1f2a1f;background:#fbfaf6;line-height:1.55}
-header{background:#2f4a2f;color:#fff;padding:48px 20px}
-.w{max-width:820px;margin:0 auto;padding:0 20px}
-h1{font-size:2rem;margin:0 0 12px}h2{margin-top:40px;color:#2f4a2f}
-.tag{display:inline-block;background:#e9c46a;color:#2a2a2a;padding:3px 10px;border-radius:12px;font-size:.85rem;font-weight:600}
-.box{background:#fff;border:1px solid #ddd;border-radius:10px;padding:18px 20px;margin:14px 0}
-table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #e3e3e3;padding:8px;text-align:left}
-.cta{background:#fff5d6;border:2px solid #e9c46a;border-radius:10px;padding:20px;margin:30px 0}
-small{color:#666}footer{padding:30px 20px;color:#666;font-size:.85rem}
+:root{--g:#24412b;--g2:#3c6b47;--sand:#f7f3ea;--y:#e9b949;--ink:#1d261f}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--sand);line-height:1.55}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+a{color:var(--g2)}
+.hero{background:var(--g);color:#fff}
+.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;padding-top:44px;padding-bottom:48px}
+.tag{display:inline-block;background:rgba(255,255,255,.12);color:var(--y);font-weight:700;font-size:13px;letter-spacing:.05em;padding:4px 12px;border-radius:99px}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.08;margin:14px 0 14px}
+h1 em{font-style:normal;color:var(--y)}
+.lead{font-size:clamp(17px,2vw,19px);margin:0 0 22px;opacity:.95}
+.btn{display:inline-block;background:var(--y);color:#1d1d1d;font-weight:800;text-decoration:none;padding:15px 26px;border-radius:10px;font-size:18px}
+.btn.line{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55);font-size:16px;padding:12px 18px;margin-left:8px}
+.under{font-size:14px;opacity:.9;margin:12px 0 0}
+.mock{width:100%;height:auto;border-radius:12px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.dates{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:1px solid #e4dccb}
+.dates div{padding:16px 18px;border-right:1px solid #eee}
+.dates b{display:block;font-size:22px;color:var(--g)}
+.dates small{color:#555}
+h2{font-size:clamp(23px,3vw,30px);line-height:1.2;margin:46px 0 12px;color:var(--g)}
+.sub{max-width:44em;margin:0 0 16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:#fff;border-radius:12px;padding:18px 20px;border:1px solid #e6dfcf}
+.card h3{margin:0 0 8px;font-size:17px}
+.card.free h3{color:#666}
+.card.us{border:2px solid var(--g2)}
+.card ul{margin:0;padding-left:20px}.card li{margin:5px 0}
+.rule{display:flex;gap:16px;align-items:center;background:#fff;border-left:6px solid var(--y);border-radius:10px;padding:16px 18px;margin:16px 0}
+.rule svg{flex:none}
+ol.steps{list-style:none;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+ol.steps li{background:#fff;border-radius:12px;padding:16px;border:1px solid #e6dfcf;position:relative}
+ol.steps li:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--g);color:var(--y);font-weight:800;margin-bottom:8px}
+.del{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;padding:0;list-style:none}
+.del li{background:#fff;border-radius:12px;padding:14px 16px;border:1px solid #e6dfcf}
+.del b{display:block;color:var(--g2)}
+.cta{background:var(--g);color:#fff;border-radius:16px;padding:28px;margin:46px 0 0}
+.cta h2{color:#fff;margin-top:0}
+.cta ul{padding-left:20px}.cta li{margin:6px 0}
+.cta .btn{margin-top:8px}
+.faq details{background:#fff;border-radius:10px;padding:12px 16px;margin:8px 0;border:1px solid #e6dfcf}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin:8px 0 0}
+.not{background:#fff8e1;border:1px solid var(--y);border-radius:12px;padding:16px 18px;margin:36px 0 0}
+footer{color:#666;font-size:13px;padding:30px 20px 50px;text-align:center}
+small.src{color:#666;font-size:13px}
+@media (max-width:780px){
+ .hero .w,.two{grid-template-columns:1fr}
+ .hero .mockbox{max-width:360px}
+ .dates{grid-template-columns:1fr}
+ ol.steps{grid-template-columns:1fr 1fr}
+ .btn.line{margin:10px 0 0}
+}
 </style>
 </head>
 <body>
-<header><div class="w">
-<span class="tag">Piloto em pré-venda</span>
-<h1>Seu café pronto para a lei antidesmatamento da União Europeia (EUDR)</h1>
-<p>Mapa de cada fazenda + checagem de desmatamento após 31/12/2020 + dossiê por lote para o seu importador europeu. Feito para exportadores pequenos, cooperativas e torrefações que não precisam de uma plataforma de grande empresa.</p>
-</div></header>
+
+<section class="hero"><div class="w">
+ <div>
+  <span class="tag">EUDR · CAFÉ · PILOTO 2026</span>
+  <h1>Seu importador pediu o GeoJSON das fazendas? <em>Montamos o arquivo do lote.</em></h1>
+  <p class="lead">Polígono por talhão, coordenadas dos fornecedores pequenos e um arquivo único por lote, no formato da documentação oficial do TRACES, o sistema da UE. Para cooperativas, exportadores e torrefações que vendem café à Europa.</p>
+  <a class="btn" href="mailto:boraautomatizar@gmail.com?subject=Amostra%20Dossi%C3%AA%20EUDR&amp;body=Empresa%3A%0ACidade%2FUF%3A%0AQuantos%20fornecedores%20no%20lote%3A%0AO%20importador%20pediu%20em%20que%20formato%3F%3A%0AJ%C3%A1%20usam%20SeloVerde%2C%20Cecaf%C3%A9%2FSerasa%20ou%20planilha%20pr%C3%B3pria%3F%3A%0AOnde%20trava%20hoje%3A%0A">Peça a amostra de 1 fornecedor</a>
+  <a class="btn line" href="#como">Como funciona</a>
+  <p class="under">Você vê a amostra antes de pagar qualquer coisa. Não é certificação oficial.</p>
+ </div>
+ <div class="mockbox">
+  <!-- Ilustração própria: talhões fictícios + trecho de GeoJSON. Exemplo ilustrativo, não é cliente. -->
+  <svg class="mock" viewBox="0 0 400 330" role="img" aria-label="Exemplo ilustrativo: talhões desenhados no mapa e o arquivo GeoJSON do lote">
+   <rect width="400" height="330" fill="#eef1e6"/>
+   <g stroke="#cfd7c2" stroke-width="1"><path d="M0 60H400M0 120H400M0 180H400M0 240H400M80 0V330M160 0V330M240 0V330M320 0V330"/></g>
+   <path d="M30 40 L150 28 L170 120 L60 140 Z" fill="#3c6b4755" stroke="#24412b" stroke-width="2.5"/>
+   <path d="M175 40 L300 50 L290 135 L190 125 Z" fill="#3c6b4755" stroke="#24412b" stroke-width="2.5"/>
+   <path d="M70 150 L180 135 L200 205 L90 220 Z" fill="#3c6b4755" stroke="#24412b" stroke-width="2.5"/>
+   <circle cx="250" cy="175" r="7" fill="#e9b949" stroke="#24412b" stroke-width="2"/>
+   <circle cx="300" cy="200" r="7" fill="#e9b949" stroke="#24412b" stroke-width="2"/>
+   <text x="72" y="92" font-size="12" font-weight="700" fill="#24412b" font-family="system-ui,Arial">A · 6,2 ha</text>
+   <text x="208" y="96" font-size="12" font-weight="700" fill="#24412b" font-family="system-ui,Arial">B · 5,1 ha</text>
+   <text x="104" y="182" font-size="12" font-weight="700" fill="#24412b" font-family="system-ui,Arial">C · 4,8 ha</text>
+   <text x="262" y="168" font-size="11" fill="#24412b" font-family="system-ui,Arial">até 4 ha: ponto</text>
+   <rect x="16" y="236" width="368" height="80" rx="8" fill="#1d261f"/>
+   <text x="28" y="258" font-size="11" fill="#e9b949" font-family="ui-monospace,Menlo,monospace">{"type":"FeatureCollection","features":[</text>
+   <text x="28" y="276" font-size="11" fill="#d7e2d0" font-family="ui-monospace,Menlo,monospace"> {"geometry":{"type":"Polygon",...},</text>
+   <text x="28" y="294" font-size="11" fill="#d7e2d0" font-family="ui-monospace,Menlo,monospace">  "properties":{"ProductionPlace":"...","Area":6.2}}</text>
+   <text x="28" y="310" font-size="10" fill="#9aa69a" font-family="system-ui,Arial">exemplo ilustrativo · lote.geojson</text>
+  </svg>
+ </div>
+</div></section>
+
+<div class="dates w" style="padding:0;max-width:none">
+ <div><b>30/12/2026</b><small>EUDR vale para operadores médios e grandes na UE</small></div>
+ <div><b>30/06/2027</b><small>vale para micro e pequenos operadores</small></div>
+ <div><b>&gt; 4 ha</b><small>área de cultivo acima disso exige polígono, não só um ponto</small></div>
+</div>
+
 <main class="w">
-<h2>Por que agora</h2>
-<div class="box">
-<p>A EUDR passa a valer em <b>30/12/2026</b> para operadores médios e grandes e em <b>30/06/2027</b> para micro e pequenos. Sem a localização da área de cultivo e a prova de que ela não foi desmatada depois de 2020, o importador não pode colocar o lote no mercado europeu. Por isso os compradores já pedem esses dados aos fornecedores brasileiros.</p>
-<small>Fontes: <a href="https://www.diariodepernambuco.com.br/economia/2026/06/11717445-exigencias-regulatorias-da-ue-podem-embarreirar-pequenos-cafeicultores.html">Diario de Pernambuco, jun/2026</a> · <a href="https://www.agrolink.com.br/noticias/cultura/cafe/eudr-2026--regra-da-ue-aumenta-exigencia-de-rastreabilidade-para-soja--cafe-e-carne_517838.html">Agrolink</a></small>
-</div>
-<h2>O que você recebe</h2>
-<div class="box"><ol>
-<li><b>Polígono de cada fazenda/talhão</b> em GeoJSON, a partir do CAR ou de pontos que você enviar.</li>
-<li><b>Checagem de desmatamento</b> após 31/12/2020 com bases públicas de satélite (MapBiomas Alerta, PRODES/INPE).</li>
-<li><b>Dossiê por lote</b> em PDF + planilha, em português e inglês, para enviar ao importador.</li>
-<li><b>Lista de pendências</b>: fazendas sem CAR, sobreposições ou alertas, para corrigir antes do embarque.</li>
-</ol></div>
-<h2>Preço do piloto</h2>
-<table>
-<tr><th>Opção</th><th>Preço</th></tr>
-<tr><td>Por fazenda</td><td>R$ 150</td></tr>
-<tr><td>Pacote exportador/cooperativa (implantação + até 20 fazendas)</td><td>R$ 3.000</td></tr>
-<tr><td>Fazenda adicional, acompanhamento anual</td><td>R$ 80/ano</td></tr>
-</table>
-<div class="cta">
-<h3 style="margin-top:0">Como funciona a pré-venda</h3>
-<ul>
-<li>Este serviço está em <b>pré-venda</b>: as primeiras vagas do piloto são limitadas.</li>
-<li>Prazo de entrega: até <b>15 dias úteis</b> após recebermos os dados das fazendas.</li>
-<li>Sinal de 30%. <b>Reembolso integral</b> se não entregarmos no prazo ou se você não aprovar a amostra da primeira fazenda.</li>
-</ul>
-<p><b>Entre na lista de espera:</b> escreva para <a href="mailto:boraautomatizar@gmail.com?subject=Piloto%20Dossi%C3%AA%20EUDR&amp;body=Empresa%3A%0ACidade%2FUF%3A%0AN%C2%BA%20de%20fazendas%3A%0AComprador%20na%20UE%20j%C3%A1%20pediu%20os%20dados%3F%3A">boraautomatizar@gmail.com</a> com o nome da empresa, a cidade, o número de fazendas e se o seu comprador europeu já pediu os dados.</p>
-</div>
-<h2>O que este serviço não é</h2>
-<div class="box"><p>Não é certificação oficial e não substitui a declaração de due diligence, que cabe ao operador europeu. É um relatório técnico de apoio feito com dados públicos, para você responder rápido ao seu comprador.</p></div>
+
+ <h2>O mapa do CAR você já consegue de graça. O arquivo do lote, nem sempre.</h2>
+ <p class="sub">Se a sua fazenda está em MG ou ES, use as ferramentas públicas: elas checam o CAR sem custo. Onde costuma travar é na hora de juntar tudo no formato que o importador precisa enviar.</p>
+ <div class="two">
+  <div class="card free">
+   <h3>O que já existe</h3>
+   <ul>
+    <li>SeloVerde MG e Selo Verde-ES: checagem gratuita pelo número do CAR</li>
+    <li>Plataforma Parque Cafeeiro (Conab/UFMG), nacional</li>
+    <li>Cecafé + Serasa, para associados do Cecafé</li>
+   </ul>
+   <small class="src">Fontes: <a href="https://www.agenciaminas.mg.gov.br/noticia/minas-gerais-exporta-primeiro-lote-de-cafe-em-conformidade-com-as-novas-regras-da-uniao-europeia/">Agência Minas</a> · <a href="https://www.es.gov.br/Noticia/selo-verde-es-garante-transparencia-ambiental-e-abre-portas-para-mercados-exigentes">Governo do ES</a> · <a href="https://www.noticiasagricolas.com.br/noticia/416009">Notícias Agrícolas</a></small>
+  </div>
+  <div class="card us">
+   <h3>Onde o Dossiê EUDR entra</h3>
+   <ul>
+    <li>O CAR é a fazenda inteira, está pendente ou impreciso, e o talhão passa de 4 ha</li>
+    <li>São dezenas de fornecedores pequenos e o importador quer <b>um arquivo só</b></li>
+    <li>A fazenda fica fora de MG/ES, sem selo estadual</li>
+    <li>O comprador quer o resumo em inglês, por lote</li>
+   </ul>
+  </div>
+ </div>
+
+ <div class="rule">
+  <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="21" fill="#24412b"/><path d="M14 30 L20 14 L32 18 L30 31 Z" fill="none" stroke="#e9b949" stroke-width="3"/></svg>
+  <div><b>A regra que mais trava:</b> para café, área de cultivo acima de 4 hectares precisa de polígono; até 4 ha, basta um ponto de coordenada. O polígono do CAR costuma ser a propriedade inteira, não o talhão do lote. <small class="src">Regulamento (UE) 2023/1115, art. 2º, item 28 · <a href="https://acceptance.eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html">documentação GeoJSON do TRACES</a></small></div>
+ </div>
+
+ <h2 id="como">Como funciona</h2>
+ <ol class="steps">
+  <li><b>Você manda</b> a lista do lote: fornecedor, CAR ou coordenadas, área aproximada.</li>
+  <li><b>Fazemos 1 fornecedor de amostra</b>, de graça, para você ver o arquivo e o relatório.</li>
+  <li><b>Aprovou?</b> Fechamos o preço do lote por escrito e você paga o sinal de 30%.</li>
+  <li><b>Entregamos</b> em até 15 dias úteis depois de receber os dados completos.</li>
+ </ol>
+
+ <h2>O que você recebe por lote</h2>
+ <ul class="del">
+  <li><b>lote.geojson</b>Um arquivo com todos os fornecedores: polígono acima de 4 ha, ponto até 4 ha, no formato da documentação do TRACES.</li>
+  <li><b>Planilha do lote</b>Fornecedor, talhão, área, origem da coordenada (CAR, ponto enviado ou desenho sobre imagem).</li>
+  <li><b>Relatório PT/EN</b>Cruzamento com bases públicas de desmatamento pós-31/12/2020 (MapBiomas Alerta, PRODES/INPE) e selo estadual quando houver.</li>
+  <li><b>Lista de pendências</b>CAR pendente, sobreposição ou alerta, para resolver antes do embarque.</li>
+ </ul>
+
+ <section class="cta">
+  <h2>Comece por 1 fornecedor, sem pagar nada</h2>
+  <ul>
+   <li>Mande o nome de 1 fornecedor e o CAR ou a coordenada. Devolvemos a amostra do arquivo e do relatório.</li>
+   <li>Só depois de aprovar a amostra fechamos o preço do lote, por escrito, antes de começar.</li>
+   <li><b>Reembolso integral do sinal</b> se não entregarmos no prazo combinado.</li>
+  </ul>
+  <a class="btn" href="mailto:boraautomatizar@gmail.com?subject=Amostra%20Dossi%C3%AA%20EUDR&amp;body=Empresa%3A%0ACidade%2FUF%3A%0AQuantos%20fornecedores%20no%20lote%3A%0AO%20importador%20pediu%20em%20que%20formato%3F%3A%0AJ%C3%A1%20usam%20SeloVerde%2C%20Cecaf%C3%A9%2FSerasa%20ou%20planilha%20pr%C3%B3pria%3F%3A%0AOnde%20trava%20hoje%3A%0A">Pedir a amostra por e-mail</a>
+  <p class="under">Recebeu nosso e-mail? Pode só responder a ele. boraautomatizar@gmail.com</p>
+ </section>
+
+ <h2>Perguntas rápidas</h2>
+ <div class="faq">
+  <details><summary>Quanto custa?</summary><p>Depende de quantos fornecedores e de quantos talhões precisam de polígono. Mandamos o preço do lote por escrito depois da amostra, antes de qualquer trabalho pago.</p></details>
+  <details><summary>Isso garante que o lote entra na UE?</summary><p>Não. A declaração de due diligence é do operador europeu. Entregamos dados e relatório técnico para ele fazer essa declaração mais rápido.</p></details>
+  <details><summary>Já uso o SeloVerde. Preciso disto?</summary><p>Talvez não. Se o seu importador aceita o que o selo entrega, ótimo. Fale com a gente quando ele pedir polígono por talhão ou um arquivo único com vários fornecedores.</p></details>
+  <details><summary>Que dados vocês usam?</summary><p>CAR/SICAR, coordenadas que você enviar e bases públicas de satélite (MapBiomas Alerta, PRODES/INPE). Não pedimos senha de nenhum sistema.</p></details>
+ </div>
+
+ <div class="not"><b>O que este serviço não é:</b> não é certificação oficial e não substitui a declaração de due diligence, que cabe ao operador europeu. É apoio técnico com dados públicos. Serviço em piloto: não mostramos clientes nem depoimentos porque ainda não temos.</div>
 </main>
-<footer class="w">Dossiê EUDR · piloto 2026 · nenhum depoimento ou cliente é exibido porque o serviço está em validação.</footer>
+
+<footer>Dossiê EUDR · piloto 2026 · contato: boraautomatizar@gmail.com</footer>
 </body>
 </html>
