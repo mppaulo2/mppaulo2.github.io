@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amostra grátis · Cápsula da Virada (3 cartas + carta para 2027)</title>
+<meta name="description" content="Imprima 3 cartas de perguntas e 1 carta para abrir em 31/12/2027 e teste a Cápsula da Virada com a sua família.">
+<meta property="og:image" content="https://mppaulo2.github.io/saz-anonovo26-capsula-virada/og.png">
+<style>
+:root{--navy:#1D2B53;--gold:#E0A800;--coral:#E4572E;--teal:#17BEBB;--cream:#FFF8E7}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--cream);color:#222}
+.bar{max-width:820px;margin:0 auto;padding:18px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.bar a{color:var(--navy);font-weight:700}
+button{font:inherit;font-weight:800;background:var(--coral);color:#fff;border:0;border-radius:999px;padding:12px 22px;cursor:pointer}
+.sheet{width:210mm;min-height:297mm;margin:0 auto 30px;background:#fff;padding:14mm;box-shadow:0 6px 24px rgba(0,0,0,.1)}
+.sheet h1{font-size:20px;margin:0 0 2px;color:var(--navy)}
+.sheet .hint{font-size:12px;color:#888;margin:0 0 10mm}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm}
+.card{border:1.5px dashed #bbb;border-radius:4mm;height:78mm;display:flex;flex-direction:column;overflow:hidden}
+.card .top{background:var(--c);color:#fff;font-weight:800;font-size:11px;padding:3mm 4mm;letter-spacing:.04em}
+.card .q{flex:1;display:grid;place-items:center;text-align:center;padding:4mm;font-weight:800;font-size:17px;color:var(--navy);line-height:1.25}
+.card .f{font-size:9px;color:#aaa;text-align:center;padding-bottom:2mm}
+.letter{border:1.5px dashed #bbb;border-radius:4mm;margin-top:8mm;overflow:hidden}
+.letter .top{background:var(--navy);color:var(--gold);font-weight:800;font-size:20px;padding:4mm 6mm}
+.letter .row{display:flex;gap:3mm;align-items:flex-end;padding:3.2mm 6mm 0;font-weight:700;color:var(--navy);font-size:13px}
+.letter .row span{flex:1;border-bottom:1px solid #bbb;height:5mm}
+.letter .warn{color:var(--coral);font-size:11px;padding:4mm 6mm}
+.more{margin-top:9mm;font-size:13px;color:#444;border-top:1px solid #eee;padding-top:5mm}
+@media print{.bar{display:none}body{background:#fff}.sheet{box-shadow:none;margin:0;padding:10mm}@page{size:A4;margin:0}}
+@media (max-width:800px){.sheet{width:auto;min-height:0;margin:0 10px 20px;padding:16px}.cards{grid-template-columns:1fr}.card{height:auto;min-height:150px}}
+</style>
+</head>
+<body>
+<div class="bar">
+ <a href="./">← Cápsula da Virada</a>
+ <button onclick="window.print()">Imprimir esta página (A4)</button>
+</div>
+
+<div class="sheet">
+ <h1>Cápsula da Virada · amostra grátis</h1>
+ <p class="hint">3 das 36 cartas (uma de cada rodada) + 1 carta para abrir no próximo Réveillon. Recorte na linha tracejada.</p>
+ <div class="cards">
+  <div class="card" style="--c:#17BEBB"><div class="top">RODADA 1 · O ANO QUE PASSOU</div><div class="q">Qual foi o dia mais feliz do seu ano?</div><div class="f">Cápsula da Virada</div></div>
+  <div class="card" style="--c:#E4572E"><div class="top">RODADA 2 · VOCÊ E OS OUTROS</div><div class="q">O que você admira na pessoa à sua direita?</div><div class="f">Cápsula da Virada</div></div>
+  <div class="card" style="--c:#E0A800"><div class="top">RODADA 3 · O ANO QUE VEM</div><div class="q">Que palavra você escolhe para o seu 2027?</div><div class="f">Cápsula da Virada</div></div>
+ </div>
+ <div class="letter">
+  <div class="top">Para abrir em 31/12/2027</div>
+  <div class="row">De:<span></span></div>
+  <div class="row">Minha palavra para 2027:<span></span></div>
+  <div class="row">O que eu quero lembrar de 2026:<span></span></div>
+  <div class="row">Uma coisa que espero ter feito até lá:<span></span></div>
+  <div class="row">Um recado para mim (ou um desenho):<span></span></div>
+  <div class="row"><span></span></div>
+  <div class="warn">Não leia antes da hora!</div>
+ </div>
+ <p class="more"><b>No jogo completo (PDF de 8 páginas, R$ 12,90):</b> 36 cartas em 3 rodadas, 4 cartas "Para abrir em 31/12/2027" para imprimir quantas precisar, 3 rótulos para o pote ou envelope e o guia da noite. Mais em mppaulo2.github.io/saz-anonovo26-capsula-virada · Autoria: Paulo Alves · uso pessoal e familiar.</p>
+</div>
+</body>
+</html>

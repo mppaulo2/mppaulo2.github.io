@@ -7,6 +7,11 @@
 <meta name="description" content="Jogo de perguntas para imprimir: 36 cartas em 3 rodadas para a noite da virada, mais cartas para lacrar e abrir só em 31/12/2027. PDF A4 por R$ 12,90.">
 <meta property="og:title" content="Cápsula da Virada: a retrospectiva da família na mesa do Réveillon">
 <meta property="og:description" content="36 perguntas para a mesa depois da ceia e uma carta para cada um abrir no próximo Réveillon. Imprima, recorte, sorteie, guarde.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mppaulo2.github.io/saz-anonovo26-capsula-virada/">
+<meta property="og:image" content="https://mppaulo2.github.io/saz-anonovo26-capsula-virada/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--navy:#1D2B53;--gold:#E0A800;--coral:#E4572E;--teal:#17BEBB;--cream:#FFF8E7;--ink:#222}
 *{box-sizing:border-box}
@@ -20,6 +25,11 @@ h1 em{font-style:normal;color:var(--gold)}
 .lead{font-size:clamp(17px,2.2vw,20px);margin:0 0 20px;max-width:34em}
 .btn{display:inline-block;padding:16px 30px;border-radius:999px;background:var(--coral);color:#fff;font-weight:800;text-decoration:none;font-size:19px;box-shadow:0 6px 0 #b13d1c}
 .btn.off{background:#9aa0ad;box-shadow:0 6px 0 #6f7480;cursor:default}
+.btn.ghost{background:transparent;box-shadow:none;border:2px solid rgba(255,255,255,.6);font-size:16px;padding:12px 20px;margin-left:8px}
+.btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 6px 0 #a87e00}
+.cross{display:flex;gap:16px;align-items:center;background:#fff;border:2px dashed var(--teal);border-radius:14px;padding:16px 18px;margin:28px auto 0;max-width:560px}
+.cross a{color:var(--navy);font-weight:800}
+.sticky a.go{background:var(--coral);color:#fff;font-weight:800;padding:12px 18px;border-radius:999px;text-decoration:none}
 .under{font-size:14px;margin:12px 0 0;opacity:.95}
 .mock{width:100%;height:auto;filter:drop-shadow(0 14px 24px rgba(0,0,0,.35))}
 .strip{background:#fff;border-bottom:1px solid #eadfca}
@@ -73,29 +83,33 @@ footer{text-align:center;font-size:13px;color:#777;padding:30px 20px 90px}
   <div>
    <span class="kicker">JOGO DE PERGUNTAS PARA IMPRIMIR</span>
    <h1>Antes da contagem regressiva, <em>a família conta o ano.</em></h1>
-   <p class="lead">36 cartas de perguntas para a mesa depois da ceia e uma carta para cada um lacrar hoje e abrir só no próximo Réveillon.</p>
-   <span class="btn off" aria-disabled="true">Em breve · R$ 12,90</span>
-   <p class="under">PDF pela Hotmart · imprime em casa · 7 dias de garantia</p>
+   <p class="lead">36 cartas de perguntas para a mesa depois da ceia e uma carta para cada um lacrar hoje e abrir só no próximo Réveillon. R$ 12,90 para a mesa inteira.</p>
+   <!-- ENQUANTO A HOTMART NÃO LIBERA: botão principal = amostra grátis.
+        QUANDO TIVER O CHECKOUT: troque href="amostra.html" por href="https://go.hotmart.com/SEU-LINK",
+        o texto por "Quero a Cápsula · R$ 12,90" e apague o span .ghost. -->
+   <a class="btn" href="amostra.html">Imprima 3 cartas grátis</a>
+   <span class="btn ghost off" aria-disabled="true">Compra abre em breve</span>
+   <p class="under">Amostra sem cadastro · produto completo: PDF pela Hotmart · 7 dias de garantia</p>
   </div>
   <div class="mockbox">
    <!-- Ilustração própria das cartas, sem imagem de terceiros. -->
    <svg class="mock" viewBox="0 0 420 340" role="img" aria-label="Cartas da Cápsula da Virada em leque sobre a mesa">
     <circle cx="60" cy="40" r="4" fill="#E0A800"/><circle cx="380" cy="30" r="5" fill="#E0A800"/><circle cx="340" cy="300" r="3" fill="#E0A800"/><circle cx="30" cy="260" r="3" fill="#E0A800"/>
-    <g transform="translate(40,70) rotate(-12)">
+    <g transform="translate(14,82) rotate(-10) scale(.88)">
      <rect width="130" height="170" rx="8" fill="#fff"/><rect width="130" height="34" rx="8" fill="#17BEBB"/><rect y="26" width="130" height="8" fill="#17BEBB"/>
      <text x="10" y="22" font-size="10" font-weight="800" fill="#fff" font-family="system-ui,Arial">RODADA 1 • 1</text>
      <text x="65" y="86" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">Qual foi o dia</text>
      <text x="65" y="102" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">mais feliz</text>
      <text x="65" y="118" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">do seu ano?</text>
     </g>
-    <g transform="translate(145,50) rotate(0)">
+    <g transform="translate(152,52) scale(.88)">
      <rect width="130" height="170" rx="8" fill="#fff"/><rect width="130" height="34" rx="8" fill="#E4572E"/><rect y="26" width="130" height="8" fill="#E4572E"/>
      <text x="10" y="22" font-size="10" font-weight="800" fill="#fff" font-family="system-ui,Arial">RODADA 2 • 13</text>
      <text x="65" y="86" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">O que você</text>
      <text x="65" y="102" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">admira na pessoa</text>
      <text x="65" y="118" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">à sua direita?</text>
     </g>
-    <g transform="translate(260,62) rotate(12)">
+    <g transform="translate(292,60) rotate(10) scale(.88)">
      <rect width="130" height="170" rx="8" fill="#fff"/><rect width="130" height="34" rx="8" fill="#E0A800"/><rect y="26" width="130" height="8" fill="#E0A800"/>
      <text x="10" y="22" font-size="10" font-weight="800" fill="#fff" font-family="system-ui,Arial">RODADA 3 • 35</text>
      <text x="65" y="86" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">Que palavra</text>
@@ -153,21 +167,29 @@ footer{text-align:center;font-size:13px;color:#777;padding:30px 20px 90px}
  <section class="offer" id="comprar">
   <div>Cápsula da Virada · PDF A4</div>
   <p class="price">R$ 12,90</p>
-  <p class="per">Um jogo para a família toda, e a cápsula volta à mesa no próximo Réveillon.</p>
+  <p class="per">Um arquivo para a mesa inteira, e serve em dois Réveillons: neste vocês jogam e lacram, no próximo abrem a cápsula.</p>
   <ul>
    <li>Download na hora, pela Hotmart</li>
    <li>Imprima quantas vezes quiser, para uso da sua família</li>
    <li>Funciona com papel A4 comum, em cores ou preto e branco</li>
   </ul>
-  <span class="btn off" aria-disabled="true">Em breve</span>
+  <!-- QUANDO TIVER O CHECKOUT: troque este span por <a class="btn" href="https://go.hotmart.com/SEU-LINK">Quero a Cápsula da Virada</a> -->
+  <span class="btn off" aria-disabled="true">Compra abre em breve</span>
+  <p style="margin:12px 0 0"><a href="amostra.html" style="color:var(--coral);font-weight:800">Enquanto isso, imprima 3 cartas grátis e teste em casa →</a></p>
   <div class="guar">
    <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3l14 5v10c0 9-6 16-14 19C12 34 6 27 6 18V8z" fill="#1D2B53"/><path d="M13 20l5 5 9-10" stroke="#E0A800" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>
    <span><b>7 dias de garantia.</b> Não gostou? Peça o reembolso pela Hotmart dentro de 7 dias.</span>
   </div>
  </section>
 
+ <div class="cross">
+  <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#17BEBB"/><text x="22" y="29" font-size="18" font-weight="800" text-anchor="middle" fill="#fff" font-family="system-ui,Arial">24</text></svg>
+  <span>Quer algo para o mês de dezembro inteiro? O <a href="https://mppaulo2.github.io/saz-natal26-advento-verao/">Advento de Verão</a>, do mesmo autor, já está à venda: 24 experiências em família de 1º a 24/12.</span>
+ </div>
+
  <h2>Perguntas rápidas</h2>
  <div class="faq">
+  <details><summary>Quando posso comprar?</summary><p>A compra abre pela Hotmart em breve, bem antes do Réveillon. Enquanto isso, imprima a <a href="amostra.html">amostra grátis</a> e veja se a sua família gosta.</p></details>
   <details><summary>Para quantas pessoas?</summary><p>De 2 a 20. Serve para família, amigos, casal ou a ceia na casa da praia.</p></details>
   <details><summary>Crianças conseguem jogar?</summary><p>Sim, a partir de uns 6 anos. Os pequenos respondem com ajuda e podem desenhar na carta para 2027.</p></details>
   <details><summary>Preciso de impressora colorida?</summary><p>Não. As cartas funcionam em preto e branco; a rodada aparece escrita no topo de cada carta.</p></details>
@@ -178,6 +200,7 @@ footer{text-align:center;font-size:13px;color:#777;padding:30px 20px 90px}
 
 <footer>Cápsula da Virada · Autoria: Paulo Alves · Produto digital para uso pessoal e familiar. Nenhum produto físico é enviado.</footer>
 
-<div class="sticky"><span><b>R$ 12,90</b> · PDF</span><span class="go">Em breve</span></div>
+<!-- QUANDO TIVER O CHECKOUT: href do .go = link da Hotmart, texto "Comprar" -->
+<div class="sticky"><span><b>R$ 12,90</b> · PDF</span><a class="go" href="amostra.html">3 cartas grátis</a></div>
 </body>
 </html>
