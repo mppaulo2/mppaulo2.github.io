@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cápsula da Virada: a retrospectiva da família na mesa do Réveillon</title>
+<meta name="description" content="Jogo de perguntas para imprimir: 36 cartas em 3 rodadas para a noite da virada, mais cartas para lacrar e abrir só em 31/12/2027. PDF A4 por R$ 12,90.">
+<meta property="og:title" content="Cápsula da Virada: a retrospectiva da família na mesa do Réveillon">
+<meta property="og:description" content="36 perguntas para a mesa depois da ceia e uma carta para cada um abrir no próximo Réveillon. Imprima, recorte, sorteie, guarde.">
+<style>
+:root{--navy:#1D2B53;--gold:#E0A800;--coral:#E4572E;--teal:#17BEBB;--cream:#FFF8E7;--ink:#222}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.hero{background:var(--navy);color:#fff;overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding-top:40px;padding-bottom:48px;position:relative}
+.kicker{display:inline-block;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--gold)}
+h1{font-size:clamp(32px,5.4vw,52px);line-height:1.06;margin:14px 0 12px;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--gold)}
+.lead{font-size:clamp(17px,2.2vw,20px);margin:0 0 20px;max-width:34em}
+.btn{display:inline-block;padding:16px 30px;border-radius:999px;background:var(--coral);color:#fff;font-weight:800;text-decoration:none;font-size:19px;box-shadow:0 6px 0 #b13d1c}
+.btn.off{background:#9aa0ad;box-shadow:0 6px 0 #6f7480;cursor:default}
+.under{font-size:14px;margin:12px 0 0;opacity:.95}
+.mock{width:100%;height:auto;filter:drop-shadow(0 14px 24px rgba(0,0,0,.35))}
+.strip{background:#fff;border-bottom:1px solid #eadfca}
+.strip ul{list-style:none;margin:0;padding:14px 0;display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;font-weight:700;font-size:15px}
+.strip li:before{content:"✓ ";color:var(--teal)}
+h2{font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:44px 0 12px}
+.sub{margin:0 0 18px;font-size:17px;max-width:40em}
+.rounds{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.round{background:#fff;border-radius:12px;overflow:hidden;border:2px solid var(--c)}
+.round .top{background:var(--c);color:#fff;padding:10px 14px;font-weight:800}
+.round ul{margin:0;padding:12px 14px 14px 30px;font-size:15px}
+.round li{margin:4px 0}
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pain div{background:#fff;border-radius:12px;padding:16px 18px}
+.pain b{display:block;margin-bottom:4px}
+.pain .no b{color:#999;text-decoration:line-through}
+.pain .yes{border:2px solid var(--navy)}
+.pain .yes b{color:var(--navy)}
+ul.inc{padding-left:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+ul.inc li{background:#fff;border-radius:10px;padding:12px 14px}
+ul.inc li b{display:block;color:var(--coral)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:0;list-style:none}
+.steps li{background:#fff;border-radius:10px;padding:12px 14px 12px 50px;position:relative}
+.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:12px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:800}
+.offer{background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.08);padding:26px;text-align:center;max-width:560px;margin:40px auto 0;border-top:6px solid var(--gold)}
+.offer .price{font-size:48px;font-weight:900;color:var(--navy);margin:4px 0 0;line-height:1}
+.offer .per{margin:6px 0 4px;color:#555}
+.offer ul{text-align:left;max-width:380px;margin:16px auto;padding-left:20px}
+.guar{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:16px;font-size:14px;color:#444;text-align:left}
+.faq details{background:#fff;border-radius:10px;padding:12px 16px;margin:8px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin:8px 0 0}
+.date{background:var(--gold);border-radius:12px;padding:14px 18px;font-weight:700;margin:28px 0 0;text-align:center}
+footer{text-align:center;font-size:13px;color:#777;padding:30px 20px 90px}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;box-shadow:0 -4px 16px rgba(0,0,0,.12);padding:10px 16px;display:none;align-items:center;justify-content:space-between;gap:10px;z-index:9}
+.sticky b{font-size:18px;color:var(--navy)}
+.sticky span.go{background:#9aa0ad;color:#fff;font-weight:800;padding:12px 18px;border-radius:999px}
+@media (max-width:760px){
+ .hero .wrap{grid-template-columns:1fr;padding-top:28px;text-align:center}
+ .hero .mockbox{order:-1;max-width:330px;margin:0 auto}
+ .lead{margin-left:auto;margin-right:auto}
+ .pain,.rounds{grid-template-columns:1fr}
+ .sticky{display:flex}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="kicker">JOGO DE PERGUNTAS PARA IMPRIMIR</span>
+   <h1>Antes da contagem regressiva, <em>a família conta o ano.</em></h1>
+   <p class="lead">36 cartas de perguntas para a mesa depois da ceia e uma carta para cada um lacrar hoje e abrir só no próximo Réveillon.</p>
+   <span class="btn off" aria-disabled="true">Em breve · R$ 12,90</span>
+   <p class="under">PDF pela Hotmart · imprime em casa · 7 dias de garantia</p>
+  </div>
+  <div class="mockbox">
+   <!-- Ilustração própria das cartas, sem imagem de terceiros. -->
+   <svg class="mock" viewBox="0 0 420 340" role="img" aria-label="Cartas da Cápsula da Virada em leque sobre a mesa">
+    <circle cx="60" cy="40" r="4" fill="#E0A800"/><circle cx="380" cy="30" r="5" fill="#E0A800"/><circle cx="340" cy="300" r="3" fill="#E0A800"/><circle cx="30" cy="260" r="3" fill="#E0A800"/>
+    <g transform="translate(40,70) rotate(-12)">
+     <rect width="130" height="170" rx="8" fill="#fff"/><rect width="130" height="34" rx="8" fill="#17BEBB"/><rect y="26" width="130" height="8" fill="#17BEBB"/>
+     <text x="10" y="22" font-size="10" font-weight="800" fill="#fff" font-family="system-ui,Arial">RODADA 1 • 1</text>
+     <text x="65" y="86" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">Qual foi o dia</text>
+     <text x="65" y="102" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">mais feliz</text>
+     <text x="65" y="118" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">do seu ano?</text>
+    </g>
+    <g transform="translate(145,50) rotate(0)">
+     <rect width="130" height="170" rx="8" fill="#fff"/><rect width="130" height="34" rx="8" fill="#E4572E"/><rect y="26" width="130" height="8" fill="#E4572E"/>
+     <text x="10" y="22" font-size="10" font-weight="800" fill="#fff" font-family="system-ui,Arial">RODADA 2 • 13</text>
+     <text x="65" y="86" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">O que você</text>
+     <text x="65" y="102" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">admira na pessoa</text>
+     <text x="65" y="118" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">à sua direita?</text>
+    </g>
+    <g transform="translate(260,62) rotate(12)">
+     <rect width="130" height="170" rx="8" fill="#fff"/><rect width="130" height="34" rx="8" fill="#E0A800"/><rect y="26" width="130" height="8" fill="#E0A800"/>
+     <text x="10" y="22" font-size="10" font-weight="800" fill="#fff" font-family="system-ui,Arial">RODADA 3 • 35</text>
+     <text x="65" y="86" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">Que palavra</text>
+     <text x="65" y="102" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">você escolhe para</text>
+     <text x="65" y="118" font-size="12" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">o seu 2027?</text>
+    </g>
+    <g transform="translate(95,250)">
+     <rect width="230" height="70" rx="10" fill="#FFF8E7"/>
+     <text x="115" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#1D2B53" font-family="system-ui,Arial">Para abrir em 31/12/2027</text>
+     <text x="115" y="52" font-size="11" text-anchor="middle" fill="#E4572E" font-family="system-ui,Arial">Não leia antes da hora!</text>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<div class="strip"><ul>
+ <li>36 perguntas em 3 rodadas</li><li>De 2 a 20 pessoas, a partir de 6 anos</li><li>Imprime em preto e branco</li><li>Sem tela, sem ganhar ou perder</li>
+</ul></div>
+
+<main class="wrap">
+
+ <h2>Todo ano a virada passa olhando o celular. Neste, olhe para a mesa.</h2>
+ <div class="pain">
+  <div class="no"><b>Esperar a meia-noite</b>Cada um na sua tela, a conversa morre depois da sobremesa e o ano acaba sem ninguém dizer o que ele foi.</div>
+  <div class="yes"><b>Cápsula da Virada</b>Um monte de cartas no meio da mesa. Cada um tira uma, responde, e as histórias do ano aparecem sozinhas.</div>
+ </div>
+
+ <h2>As 3 rodadas, com perguntas de verdade do jogo</h2>
+ <p class="sub">Comece pela rodada 1 depois da ceia e termine pela 3 perto da meia-noite.</p>
+ <div class="rounds">
+  <div class="round" style="--c:var(--teal)"><div class="top">1 · O ano que passou</div><ul><li>Que coisa difícil você conseguiu fazer?</li><li>Que foto do seu celular resume o seu ano?</li><li>Qual foi o momento mais engraçado desta família?</li></ul></div>
+  <div class="round" style="--c:var(--coral)"><div class="top">2 · Você e os outros</div><ul><li>Agradeça a alguém da mesa por algo que a pessoa nem imagina.</li><li>Que conselho você daria ao seu eu de janeiro?</li><li>Imite alguém da mesa. Os outros adivinham quem é.</li></ul></div>
+  <div class="round" style="--c:var(--gold)"><div class="top">3 · O ano que vem</div><ul><li>Se 2027 fosse um filme, qual seria o nome?</li><li>Um medo que você quer deixar em 2026.</li><li>Termine a frase: em 2027, eu vou ter coragem de...</li></ul></div>
+ </div>
+
+ <h2>Como funciona na noite da virada</h2>
+ <ol class="steps">
+  <li>Imprima e recorte as cartas.</li>
+  <li>Depois da ceia, cada um tira uma carta e responde.</li>
+  <li>Antes da meia-noite, cada um escreve a sua carta para 2027.</li>
+  <li>Lacre tudo num pote ou envelope com o rótulo. Abram no próximo Réveillon.</li>
+ </ol>
+
+ <h2>O que vem no PDF (8 páginas A4)</h2>
+ <ul class="inc">
+  <li><b>36 cartas de perguntas</b>12 por rodada, separadas por cor.</li>
+  <li><b>4 cartas "Para abrir em 31/12/2027"</b>Imprima quantas precisar, uma por pessoa.</li>
+  <li><b>3 rótulos para a cápsula</b>Para pote, envelope ou caixa.</li>
+  <li><b>Guia de uso</b>Passo a passo da noite, em uma página.</li>
+ </ul>
+
+ <div class="date">Réveillon é em 31 de dezembro: imprima antes e deixe na mesa da ceia.</div>
+
+ <section class="offer" id="comprar">
+  <div>Cápsula da Virada · PDF A4</div>
+  <p class="price">R$ 12,90</p>
+  <p class="per">Um jogo para a família toda, e a cápsula volta à mesa no próximo Réveillon.</p>
+  <ul>
+   <li>Download na hora, pela Hotmart</li>
+   <li>Imprima quantas vezes quiser, para uso da sua família</li>
+   <li>Funciona com papel A4 comum, em cores ou preto e branco</li>
+  </ul>
+  <span class="btn off" aria-disabled="true">Em breve</span>
+  <div class="guar">
+   <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3l14 5v10c0 9-6 16-14 19C12 34 6 27 6 18V8z" fill="#1D2B53"/><path d="M13 20l5 5 9-10" stroke="#E0A800" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>
+   <span><b>7 dias de garantia.</b> Não gostou? Peça o reembolso pela Hotmart dentro de 7 dias.</span>
+  </div>
+ </section>
+
+ <h2>Perguntas rápidas</h2>
+ <div class="faq">
+  <details><summary>Para quantas pessoas?</summary><p>De 2 a 20. Serve para família, amigos, casal ou a ceia na casa da praia.</p></details>
+  <details><summary>Crianças conseguem jogar?</summary><p>Sim, a partir de uns 6 anos. Os pequenos respondem com ajuda e podem desenhar na carta para 2027.</p></details>
+  <details><summary>Preciso de impressora colorida?</summary><p>Não. As cartas funcionam em preto e branco; a rodada aparece escrita no topo de cada carta.</p></details>
+  <details><summary>Recebo alguma coisa em casa?</summary><p>Não. É um arquivo digital: você baixa o PDF logo após o pagamento e imprime.</p></details>
+  <details><summary>E se alguém não quiser responder?</summary><p>Cada pessoa pode passar uma vez no jogo. Não tem pontos, ninguém ganha ou perde.</p></details>
+ </div>
+</main>
+
+<footer>Cápsula da Virada · Autoria: Paulo Alves · Produto digital para uso pessoal e familiar. Nenhum produto físico é enviado.</footer>
+
+<div class="sticky"><span><b>R$ 12,90</b> · PDF</span><span class="go">Em breve</span></div>
+</body>
+</html>
